@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchorId" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="461.0" prefWidth="479.0" style="-fx-background-color: #ebebeb;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<AnchorPane fx:id="anchorId" prefHeight="461.0" prefWidth="479.0" style="-fx-background-color: #ebebeb;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
       <TabPane prefHeight="455.0" prefWidth="479.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
@@ -19,7 +19,7 @@
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="491.0" prefWidth="522.0">
                      <children>
                         <Button fx:id="browseStore" layoutX="317.0" layoutY="99.0" mnemonicParsing="false" onAction="#browseStoreEndpoint" text="Browse" />
-                        <Button layoutX="34.0" layoutY="136.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" onAction="#generate" text="Generate" />
+                        <Button layoutX="34.0" layoutY="136.0" mnemonicParsing="false" onAction="#generate" prefHeight="30.0" prefWidth="90.0" text="Generate" />
                         <TextField fx:id="endpointStorePath" layoutX="34.0" layoutY="99.0" prefHeight="25.0" prefWidth="277.0" promptText="Select directory ....">
                            <tooltip>
                               <Tooltip text="Select a directory to store results" />
@@ -32,7 +32,8 @@
                               <Tooltip text="Enter endpoint URL" />
                            </tooltip>
                         </TextField>
-                        <TextArea fx:id="consoleLog" layoutX="35.0" layoutY="187.0" prefHeight="210.0" prefWidth="407.0" />
+                        <TextArea fx:id="consoleLog" layoutX="35.0" layoutY="187.0" prefHeight="195.0" prefWidth="407.0" />
+                        <Button layoutX="220.0" layoutY="136.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" text="Stop" onAction="#stopGenerating" textAlignment="JUSTIFY" />
                      </children>
                   </AnchorPane>
             </content>

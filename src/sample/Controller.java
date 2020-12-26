@@ -4,7 +4,6 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
@@ -12,14 +11,21 @@ import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
 
 import java.io.*;
+import java.lang.management.ManagementFactory;
+import java.lang.management.RuntimeMXBean;
 import java.net.URL;
-import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class Controller implements Initializable {
 
     @FXML
     private TextArea consoleLog;
+
+    Process generateProcess;
 
     @FXML
     private AnchorPane anchorId;
@@ -52,16 +58,33 @@ public class Controller implements Initializable {
     }
 
     @FXML
-    private Button compareBtn;
+    private void generate(ActionEvent actionEvent) {
+        ExecutorService ex = Executors.newSingleThreadExecutor(r -> {
+            Thread t = Executors.defaultThreadFactory().newThread(r);
+            t.setDaemon(true);
+            return t;
+        });
+        ex.execute(() -> {
+            try {
+                List<String> commands = new ArrayList<>();
+                commands.add("ping");
+                commands.add("www.google.com");
+                ProcessBuilder processBuilder = new ProcessBuilder(commands);
+                generateProcess = processBuilder.start();
+                BufferedReader reader = new BufferedReader(new InputStreamReader(generateProcess.getInputStream()));
+                String line = "";
+                while ((line = reader.readLine()) != null) {
+                    System.out.println(line);
+                }
+            } catch (IOException  e) {
+                e.printStackTrace();
+            }
+        });
+    }
 
     @FXML
-    private void generate(ActionEvent actionEvent){
-        try {
-            Process process = Runtime.getRuntime().exec("java -version");
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    private void stopGenerating(ActionEvent actionEvent){
+        generateProcess.destroy();
     }
 
     @FXML
@@ -91,5 +114,6 @@ public class Controller implements Initializable {
             }
         };
         System.setOut(new PrintStream(out, true));
+        System.setErr(new PrintStream(out, true));
     }
 }
