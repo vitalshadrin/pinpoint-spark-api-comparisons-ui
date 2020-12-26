@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorId" prefHeight="900.0" prefWidth="800.0" style="-fx-background-color: #ebebeb;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="comparison.controller.ComparisonController">
+   <children>
+      <TabPane prefHeight="920.0" prefWidth="820.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Generate">
+            <content>
+              <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="9000.0" prefWidth="800.0">
+                     <children>
+                        <Button fx:id="browseStore" layoutX="484.0" layoutY="99.0" mnemonicParsing="false" onAction="#browseStoreEndpoint" text="Browse" />
+                        <Button layoutX="34.0" layoutY="136.0" mnemonicParsing="false" onAction="#generate" prefHeight="30.0" prefWidth="90.0" text="Generate" />
+                        <TextField fx:id="endpointStorePath" layoutX="34.0" layoutY="99.0" prefHeight="25.0" prefWidth="435.0" promptText="Select directory ....">
+                           <tooltip>
+                              <Tooltip text="Select a directory to store results">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></Tooltip>
+                           </tooltip>
+                        </TextField>
+                        <Label layoutX="34.0" layoutY="82.0" text="Path to save generated API dumps:" />
+                        <Label layoutX="35.0" layoutY="32.0" text="URL of testing endpoint:" />
+                        <TextField layoutX="35.0" layoutY="49.0" prefHeight="25.0" prefWidth="434.0" promptText="URL...">
+                           <tooltip>
+                              <Tooltip text="Enter endpoint URL">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></Tooltip>
+                           </tooltip>
+                        </TextField>
+                        <TextArea fx:id="consoleLog" layoutX="37.0" layoutY="193.0" prefHeight="680.0" prefWidth="746.0" />
+                        <Button layoutX="164.0" layoutY="136.0" mnemonicParsing="false" onAction="#stop" prefHeight="30.0" prefWidth="90.0" text="Stop" textAlignment="JUSTIFY" />
+                        <Label layoutX="37.0" layoutY="176.0" text="Logger:" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Compare">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="browseFirst" layoutX="30.0" layoutY="53.0" prefHeight="25.0" prefWidth="504.0" promptText="Select directory ....">
+                           <tooltip>
+                              <Tooltip text="Select the directory with the first endpoint">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Tooltip>
+                           </tooltip>
+                        </TextField>
+                        <Button fx:id="browseFirstEndpoint" layoutX="560.0" layoutY="53.0" mnemonicParsing="false" onAction="#browseFirstEndpoint" text="Browse" />
+                        <TextField fx:id="browseSecond" layoutX="30.0" layoutY="101.0" prefHeight="25.0" prefWidth="503.0" promptText="Select directory ....">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                           <tooltip>
+                              <Tooltip text="Select the directory with the second endpoint">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></Tooltip>
+                           </tooltip>
+                        </TextField>
+                        <Button fx:id="browseSecondEndpoint" layoutX="560.0" layoutY="101.0" mnemonicParsing="false" onAction="#browseSecondEndpoint" text="Browse" />
+                        <TextField fx:id="browseComparePath" layoutX="30.0" layoutY="151.0" prefHeight="25.0" prefWidth="503.0" promptText="Select directory ....">
+                           <tooltip>
+                              <Tooltip text="Select a directory to generate results">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></Tooltip>
+                           </tooltip>
+                        </TextField>
+                        <Button fx:id="browseSecondCompare" layoutX="560.0" layoutY="151.0" mnemonicParsing="false" onAction="#browseComparePath" text="Browse" />
+                        <Label layoutX="30.0" layoutY="36.0" text="Path to folder where API dumps of 1st endpoint are stored:" />
+                        <Label layoutX="30.0" layoutY="84.0" text="Path to folder where API dumps of 2st endpoint are stored:" />
+                        <Label layoutX="30.0" layoutY="134.0" text="Path to folder where test reports will be saved:" />
+                        <Button fx:id="compareBtn" layoutX="30.0" layoutY="188.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="91.0" text="Compare" />
+                        <Button layoutX="163.0" layoutY="189.0" mnemonicParsing="false" onAction="#stop" prefHeight="30.0" prefWidth="90.0" text="Stop" textAlignment="JUSTIFY" />
+                        <TextArea fx:id="consoleLog1" layoutX="30.0" layoutY="245.0" prefHeight="625.0" prefWidth="761.0" />
+                        <Label layoutX="30.0" layoutY="228.0" text="Logger:" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
