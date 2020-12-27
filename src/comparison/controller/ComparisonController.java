@@ -6,20 +6,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.DirectoryChooser;
-import javafx.stage.Stage;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintStream;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
-public class ComparisonController implements Initializable {
-    Process generateProcess;
-
+public class ComparisonController extends ControllerHelper implements Initializable {
     @FXML
     private TextArea consoleLog;
 
@@ -39,66 +33,45 @@ public class ComparisonController implements Initializable {
     private TextField browseComparePath;
 
     @FXML
+    private TextField url;
+
+    @FXML
     private void browseStoreEndpoint() {
-        browseEndpoint(endpointStorePath);
+        browseEndpoint(this.anchorId, this.endpointStorePath);
     }
 
     @FXML
     private void browseFirstEndpoint() {
-        browseEndpoint(browseFirst);
+        browseEndpoint(this.anchorId, this.browseFirst);
     }
 
     @FXML
     private void browseSecondEndpoint() {
-        browseEndpoint(browseSecond);
+        browseEndpoint(this.anchorId, this.browseSecond);
     }
 
     @FXML
     private void generate() {
-        ExecutorService ex = Executors.newSingleThreadExecutor(r -> {
-            Thread t = Executors.defaultThreadFactory().newThread(r);
-            t.setDaemon(true);
-            return t;
-        });
-        ex.execute(() -> {
-            try {
-                List<String> commands = new ArrayList<>();
-                commands.add("ping");
-                commands.add("www.google.com");
-                ProcessBuilder processBuilder = new ProcessBuilder(commands);
-                generateProcess = processBuilder.start();
-                BufferedReader reader = new BufferedReader(new InputStreamReader(generateProcess.getInputStream()));
-                String line;
-                while ((line = reader.readLine()) != null) {
-                    System.out.println(line);
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        });
+        executor("cmd /c start java -jar pinpoint-spark-api-comparisons.jar generate-summary -url " + url.getText() + " -s " + endpointStorePath.getText() + " && exit");
     }
 
     @FXML
     private void stop() {
-        generateProcess.destroy();
+        try {
+            getRuntime().exec("taskkill /f /im cmd.exe") ;
+            System.exit(1);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
     private void browseComparePath() {
-        browseEndpoint(browseComparePath);
-    }
-
-    private void browseEndpoint(TextField textField) {
-        final DirectoryChooser directoryChooser = new DirectoryChooser();
-        Stage stage = (Stage) anchorId.getScene().getWindow();
-        File file = directoryChooser.showDialog(stage);
-        if (file != null) {
-            textField.setText(String.valueOf(file.getAbsoluteFile()));
-        }
+        browseEndpoint(this.anchorId, this.browseComparePath);
     }
 
     public void appendText(String str) {
-        Platform.runLater(() -> consoleLog.appendText(str));
+        Platform.runLater(() -> this.consoleLog.appendText(str));
     }
 
     @Override

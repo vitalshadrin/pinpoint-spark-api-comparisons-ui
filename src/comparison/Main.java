@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -11,10 +12,10 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) {
-        //stage.setScene(new Scene(rootNode));
         stage.setTitle("Comparison");
         stage.setResizable(false);
-        stage.setScene(new Scene(rootNode, 800, 900));
+        stage.setScene(new Scene(rootNode, 550, 270));
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("ic_launcher.png")));
         stage.show();
     }
 
