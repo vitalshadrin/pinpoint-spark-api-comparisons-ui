@@ -17,9 +17,9 @@
             <content>
               <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="526.0" prefWidth="508.0">
                      <children>
-                        <Button fx:id="browseStore" layoutX="484.0" layoutY="99.0" mnemonicParsing="false" onAction="#browseStoreEndpoint" text="Browse" />
-                        <Button layoutX="30.0" layoutY="138.0" mnemonicParsing="false" onAction="#generate" prefHeight="30.0" prefWidth="90.0" text="Generate" />
-                        <TextField fx:id="endpointStorePath" layoutX="30.0" layoutY="99.0" prefHeight="25.0" prefWidth="435.0" promptText="Select directory ....">
+                        <Button fx:id="browseStore" layoutX="485.0" layoutY="126.0" mnemonicParsing="false" onAction="#browseStoreEndpoint" text="Browse" />
+                        <Button layoutX="30.0" layoutY="187.0" mnemonicParsing="false" onAction="#generate" prefHeight="30.0" prefWidth="90.0" text="Generate" />
+                        <TextField fx:id="endpointStorePath" layoutX="30.0" layoutY="126.0" prefHeight="25.0" prefWidth="435.0" promptText="Select directory ....">
                            <tooltip>
                               <Tooltip text="Select a directory to store results">
                                  <font>
@@ -27,16 +27,18 @@
                                  </font></Tooltip>
                            </tooltip>
                         </TextField>
-                        <Label layoutX="34.0" layoutY="82.0" text="Path to save generated API dumps:" />
-                        <Label layoutX="35.0" layoutY="32.0" text="URL of testing endpoint:" />
+                        <Label layoutX="31.0" layoutY="105.0" text="Path to save generated API dumps:" />
+                        <Label layoutX="31.0" layoutY="30.0" text="URL of testing endpoint:" />
                         <TextField fx:id="url" layoutX="30.0" layoutY="49.0" prefHeight="25.0" prefWidth="434.0" promptText="URL...">
                            <tooltip>
-                              <Tooltip text="Enter endpoint URL">
+                              <Tooltip fx:id="urlTooltip" text="Enter endpoint URL">
                                  <font>
                                     <Font size="14.0" />
                                  </font></Tooltip>
                            </tooltip>
                         </TextField>
+                        <Label fx:id="urlErrorLabel" layoutX="30.0" layoutY="76.0" textFill="RED" />
+                        <Label fx:id="pathErrorLabel" layoutX="30.0" layoutY="154.0" textFill="RED" />
                      </children>
                   </AnchorPane>
             </content>

@@ -3,11 +3,11 @@ package comparison.controller;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
-import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintStream;
 import java.net.URL;
@@ -36,7 +36,14 @@ public class ComparisonController extends ControllerHelper implements Initializa
     private TextField url;
 
     @FXML
+    private Label urlErrorLabel;
+
+    @FXML
+    private Label pathErrorLabel;
+
+    @FXML
     private void browseStoreEndpoint() {
+        endpointStorePath.setOnMouseClicked(event -> pathErrorLabel.setText("hello"));
         browseEndpoint(this.anchorId, this.endpointStorePath);
     }
 
@@ -51,24 +58,46 @@ public class ComparisonController extends ControllerHelper implements Initializa
     }
 
     @FXML
-    private void generate() {
-        executor("cmd /c start java -jar pinpoint-spark-api-comparisons.jar generate-summary -url " + url.getText() + " -s " + endpointStorePath.getText() + " && exit");
+    private void browseComparePath() {
+        browseEndpoint(this.anchorId, this.browseComparePath);
     }
 
+
+
     @FXML
-    private void stop() {
-        try {
-            getRuntime().exec("taskkill /f /im cmd.exe") ;
-            System.exit(1);
-        } catch (IOException e) {
-            e.printStackTrace();
+    private void generate() {
+        Boolean readyStatus = true;
+        if (url.getText().isEmpty()) {
+            urlErrorLabel.setText("Please fill URL");
+            url.setStyle("-fx-border-color: red ; -fx-border-width: 1px ;");
+            readyStatus = false;
+        }
+        if (endpointStorePath.getText().isEmpty()) {
+            pathErrorLabel.setText("Please fill endpoint store path");
+            endpointStorePath.setStyle("-fx-border-color: red ; -fx-border-width: 1px ;");
+            readyStatus = false;
+        }else {
+            pathErrorLabel.setText(" ");
+            readyStatus = true;
+        }
+
+        if (readyStatus) {
+            executor("cmd /c start java -jar pinpoint-spark-api-comparisons.jar generate-summary -url "
+                    + url.getText() + " -s "
+                    + endpointStorePath.getText() +
+                    " && exit");
         }
     }
 
     @FXML
-    private void browseComparePath() {
-        browseEndpoint(this.anchorId, this.browseComparePath);
+    private void compare() {
+        executor("cmd /c start java -jar pinpoint-spark-api-comparisons.jar compare-summaries " +
+                "-s1 " + browseFirst.getText() + " " +
+                "-s2 " + browseSecond.getText() + " " +
+                "-sr " + browseComparePath.getText() + "  " +
+                " && exit");
     }
+
 
     public void appendText(String str) {
         Platform.runLater(() -> this.consoleLog.appendText(str));
@@ -76,6 +105,13 @@ public class ComparisonController extends ControllerHelper implements Initializa
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        url.textProperty().addListener((obs, oldText, newText) -> {
+            if(!newText.isEmpty()){
+                urlErrorLabel.setText(" ");
+                url.setStyle("-fx-border-color: black ; -fx-border-width: 0px ;");
+            }
+        });
+
         OutputStream out = new OutputStream() {
             @Override
             public void write(int b) {

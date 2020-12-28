@@ -21,7 +21,7 @@ public class Main extends Application {
 
     @Override
     public void init() throws Exception {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/sample.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/comparison.fxml"));
         rootNode = fxmlLoader.load();
     }
 

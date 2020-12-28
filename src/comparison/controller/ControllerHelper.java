@@ -13,8 +13,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class ControllerHelper {
-    private Runtime runtime;
-    private Process process;
 
     /*
      * anchorId - Main Anchor Pane
@@ -42,8 +40,8 @@ public class ControllerHelper {
         });
         ex.execute(() -> {
             try {
-                runtime = Runtime.getRuntime();
-                process = runtime.exec(command);
+                Runtime runtime = Runtime.getRuntime();
+                Process process = runtime.exec(command);
                 BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
                 String line;
                 while ((line = reader.readLine()) != null) {
@@ -55,11 +53,4 @@ public class ControllerHelper {
         });
     }
 
-    public Process getProcess() {
-        return this.process;
-    }
-
-    public Runtime getRuntime() {
-        return this.runtime;
-    }
 }
