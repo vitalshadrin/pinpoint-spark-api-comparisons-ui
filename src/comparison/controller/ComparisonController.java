@@ -3,6 +3,7 @@ package comparison.controller;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -14,8 +15,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class ComparisonController extends ControllerHelper implements Initializable {
-    @FXML
-    private TextArea consoleLog;
+    Validator validator = new Validator();
 
     @FXML
     private AnchorPane anchorId;
@@ -24,26 +24,34 @@ public class ComparisonController extends ControllerHelper implements Initializa
     private TextField endpointStorePath;
 
     @FXML
+    private Label labelGenerateStore;
+
+    @FXML
     private TextField browseFirst;
+
+    @FXML
+    private Label labelFirstStore;
 
     @FXML
     private TextField browseSecond;
 
     @FXML
+    private Label labelSecondStore;
+
+    @FXML
     private TextField browseComparePath;
+
+    @FXML
+    private Label labelCompareStore;
 
     @FXML
     private TextField url;
 
     @FXML
-    private Label urlErrorLabel;
-
-    @FXML
-    private Label pathErrorLabel;
+    private Label urlLabel;
 
     @FXML
     private void browseStoreEndpoint() {
-        endpointStorePath.setOnMouseClicked(event -> pathErrorLabel.setText("hello"));
         browseEndpoint(this.anchorId, this.endpointStorePath);
     }
 
@@ -62,25 +70,11 @@ public class ComparisonController extends ControllerHelper implements Initializa
         browseEndpoint(this.anchorId, this.browseComparePath);
     }
 
-
-
     @FXML
     private void generate() {
-        Boolean readyStatus = true;
-        if (url.getText().isEmpty()) {
-            urlErrorLabel.setText("Please fill URL");
-            url.setStyle("-fx-border-color: red ; -fx-border-width: 1px ;");
-            readyStatus = false;
-        }
-        if (endpointStorePath.getText().isEmpty()) {
-            pathErrorLabel.setText("Please fill endpoint store path");
-            endpointStorePath.setStyle("-fx-border-color: red ; -fx-border-width: 1px ;");
-            readyStatus = false;
-        }else {
-            pathErrorLabel.setText(" ");
-            readyStatus = true;
-        }
-
+        boolean readyStatus =
+                validator.validate(url, urlLabel, "Please fill URL") &
+                        validator.validate(endpointStorePath, labelGenerateStore, "Please fill endpoint store path");
         if (readyStatus) {
             executor("cmd /c start java -jar pinpoint-spark-api-comparisons.jar generate-summary -url "
                     + url.getText() + " -s "
@@ -91,34 +85,25 @@ public class ComparisonController extends ControllerHelper implements Initializa
 
     @FXML
     private void compare() {
-        executor("cmd /c start java -jar pinpoint-spark-api-comparisons.jar compare-summaries " +
-                "-s1 " + browseFirst.getText() + " " +
-                "-s2 " + browseSecond.getText() + " " +
-                "-sr " + browseComparePath.getText() + "  " +
-                " && exit");
-    }
-
-
-    public void appendText(String str) {
-        Platform.runLater(() -> this.consoleLog.appendText(str));
+        boolean readyStatus =
+                validator.validate(browseFirst, labelFirstStore, "Please fill 1st stored path") &
+                        validator.validate(browseSecond, labelSecondStore, "Please fill 2st stored path") &
+                        validator.validate(browseComparePath, labelCompareStore, "Please fill compare results store path");
+        if (readyStatus) {
+            executor("cmd /c start java -jar pinpoint-spark-api-comparisons.jar compare-summaries " +
+                    "-s1 " + browseFirst.getText() + " " +
+                    "-s2 " + browseSecond.getText() + " " +
+                    "-sr " + browseComparePath.getText() + "  " +
+                    " && exit");
+        }
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        url.textProperty().addListener((obs, oldText, newText) -> {
-            if(!newText.isEmpty()){
-                urlErrorLabel.setText(" ");
-                url.setStyle("-fx-border-color: black ; -fx-border-width: 0px ;");
-            }
-        });
-
-        OutputStream out = new OutputStream() {
-            @Override
-            public void write(int b) {
-                appendText(String.valueOf((char) b));
-            }
-        };
-        System.setOut(new PrintStream(out, true));
-        System.setErr(new PrintStream(out, true));
+        validator.validateListener(url, urlLabel);
+        validator.validateListener(endpointStorePath, labelGenerateStore);
+        validator.validateListener(browseFirst, labelFirstStore);
+        validator.validateListener(browseSecond, labelSecondStore);
+        validator.validateListener(browseComparePath, labelCompareStore);
     }
 }

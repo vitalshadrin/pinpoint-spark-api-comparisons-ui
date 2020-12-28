@@ -34,9 +34,9 @@ public class ControllerHelper {
      */
     public void executor(String command) {
         ExecutorService ex = Executors.newSingleThreadExecutor(r -> {
-            Thread t = Executors.defaultThreadFactory().newThread(r);
-            t.setDaemon(true);
-            return t;
+            Thread thread = Executors.defaultThreadFactory().newThread(r);
+            thread.setDaemon(true);
+            return thread;
         });
         ex.execute(() -> {
             try {
@@ -52,5 +52,4 @@ public class ControllerHelper {
             }
         });
     }
-
 }
