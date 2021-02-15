@@ -14,6 +14,8 @@ import java.util.concurrent.Executors;
 
 public class ControllerHelper {
 
+    Validator validator = new Validator();
+
     /*
      * anchorId - Main Anchor Pane
      * textField - Text Field To set Path
