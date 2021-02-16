@@ -70,11 +70,9 @@ public class ComparisonController extends ControllerHelper implements Initializa
                 validator.validate(url, urlLabel, "Please fill URL") &
                         validator.validate(endpointStorePath, labelGenerateStore, "Please fill endpoint store path");
         if (readyStatus && showAlert("Are you sure that want to continue new Endpoint generation")) {
-            executor((System.getProperty("os.name").equals("Linux") ? "gnome-terminal -- " : "cmd /c start ") +
-                    "java -jar pinpoint-spark-api-comparisons.jar generate-summary " +
-                    "-url " + url.getText() +
-                    " -s " + endpointStorePath.getText() +
-                    " && exit");
+            executor((System.getProperty("os.name").equals("Linux") ? "gnome-terminal -- " : "cmd /c start generate1.cmd ")
+                    + url.getText() + " "
+                    + endpointStorePath.getText());
         }
     }
 
@@ -85,12 +83,10 @@ public class ComparisonController extends ControllerHelper implements Initializa
                         validator.validate(browseSecond, labelSecondStore, "Please fill 2st stored path") &
                         validator.validate(browseComparePath, labelCompareStore, "Please fill compare results store path");
         if (readyStatus && showAlert("Are you sure that want to continue compare")) {
-            executor((System.getProperty("os.name").equals("Linux") ? "gnome-terminal -- " : "cmd /c start ") +
-                    "java -jar pinpoint-spark-api-comparisons.jar compare-summaries " +
-                    "-s1 " + browseFirst.getText() + " " +
-                    "-s2 " + browseSecond.getText() + " " +
-                    "-sr " + browseComparePath.getText() + "  " +
-                    " && exit");
+            executor((System.getProperty("os.name").equals("Linux") ? "gnome-terminal -- " : "cmd /c start compare.cmd ") +
+                    browseFirst.getText() + " " +
+                    browseSecond.getText() + " " +
+                    browseComparePath.getText());
         }
     }
 
