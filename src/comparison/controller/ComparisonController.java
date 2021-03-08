@@ -2,7 +2,8 @@ package comparison.controller;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.*;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
 import java.net.URL;
@@ -13,12 +14,6 @@ public class ComparisonController extends ControllerHelper implements Initializa
 
     @FXML
     private AnchorPane anchorId;
-
-    @FXML
-    private TextField endpointStorePath;
-
-    @FXML
-    private Label labelGenerateStore;
 
     @FXML
     private TextField browseFirst;
@@ -39,17 +34,6 @@ public class ComparisonController extends ControllerHelper implements Initializa
     private Label labelCompareStore;
 
     @FXML
-    private TextField url;
-
-    @FXML
-    private Label urlLabel;
-
-    @FXML
-    private void browseStoreEndpoint() {
-        browseEndpoint(this.anchorId, this.endpointStorePath);
-    }
-
-    @FXML
     private void browseFirstEndpoint() {
         browseEndpoint(this.anchorId, this.browseFirst);
     }
@@ -65,24 +49,12 @@ public class ComparisonController extends ControllerHelper implements Initializa
     }
 
     @FXML
-    private void generate() {
-        boolean readyStatus =
-                validator.validate(url, urlLabel, "Please fill URL") &
-                        validator.validate(endpointStorePath, labelGenerateStore, "Please fill endpoint store path");
-        if (readyStatus && showAlert("Are you sure that want to continue new Endpoint generation")) {
-            executor((System.getProperty("os.name").equals("Linux") ? "gnome-terminal -- " : "cmd /c start generate1.cmd ")
-                    + url.getText() + " "
-                    + endpointStorePath.getText());
-        }
-    }
-
-    @FXML
     private void compare() {
         boolean readyStatus =
-                validator.validate(browseFirst, labelFirstStore, "Please fill 1st stored path") &
-                        validator.validate(browseSecond, labelSecondStore, "Please fill 2st stored path") &
-                        validator.validate(browseComparePath, labelCompareStore, "Please fill compare results store path");
-        if (readyStatus && showAlert("Are you sure that want to continue compare")) {
+                validator.validate(browseFirst, labelFirstStore, propertiesReader.getProperty("browseFirstError")) &
+                        validator.validate(browseSecond, labelSecondStore, propertiesReader.getProperty("browseSecondError")) &
+                        validator.validate(browseComparePath, labelCompareStore, propertiesReader.getProperty("browseComparePathError"));
+        if (readyStatus && alerts.informationAlert(propertiesReader.getProperty("compareInformationAlert"))) {
             executor((System.getProperty("os.name").equals("Linux") ? "gnome-terminal -- " : "cmd /c start compare.cmd ") +
                     browseFirst.getText() + " " +
                     browseSecond.getText() + " " +
@@ -90,22 +62,9 @@ public class ComparisonController extends ControllerHelper implements Initializa
         }
     }
 
-    private boolean showAlert(String text) {
-        ButtonType continueBtn = new ButtonType("Continue");
-        ButtonType stopButton = new ButtonType("Stop");
-        Alert alert = new Alert(Alert.AlertType.INFORMATION, "", continueBtn, stopButton);
-        alert.setTitle("Information Dialog");
-        alert.setHeaderText(null);
-        alert.setContentText(text);
-        alert.showAndWait();
-        return alert.getResult().equals(continueBtn);
-    }
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         HashMap<TextField, Label> textFieldLabelHashMap = new HashMap<TextField, Label>() {{
-            put(url, urlLabel);
-            put(endpointStorePath, labelGenerateStore);
             put(browseFirst, labelFirstStore);
             put(browseSecond, labelSecondStore);
             put(browseComparePath, labelCompareStore);

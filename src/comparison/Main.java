@@ -15,13 +15,13 @@ public class Main extends Application {
         stage.setTitle("Comparison");
         stage.setResizable(false);
         stage.setScene(new Scene(rootNode, 563, 350));
-        stage.getIcons().add(new Image(getClass().getResourceAsStream("ic_launcher.png")));
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("icons/ic_launcher.png")));
         stage.show();
     }
 
     @Override
     public void init() throws Exception {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/comparison.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/main.fxml"));
         rootNode = fxmlLoader.load();
     }
 

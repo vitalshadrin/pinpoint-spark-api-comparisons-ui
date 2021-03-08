@@ -1,5 +1,8 @@
 package comparison.controller;
 
+import comparison.components.Alerts;
+import comparison.components.PropertiesReader;
+import comparison.components.Validator;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.DirectoryChooser;
@@ -13,8 +16,15 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class ControllerHelper {
+    Validator validator;
+    Alerts alerts;
+    PropertiesReader propertiesReader;
 
-    Validator validator = new Validator();
+    ControllerHelper() {
+        this.validator = new Validator();
+        this.alerts = new Alerts();
+        this.propertiesReader = new PropertiesReader();
+    }
 
     /*
      * anchorId - Main Anchor Pane

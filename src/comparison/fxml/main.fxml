@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane fx:id="anchorId" prefHeight="572.0" prefWidth="505.0" style="-fx-background-color: #ebebeb;"
+            xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="comparison.controller.MainController">
+    <children>
+        <TabPane prefHeight="920.0" prefWidth="820.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="Options">
+                    <content>
+                        <fx:include fx:id="optionsTab" source="options.fxml"/>
+                    </content>
+                </Tab>
+                <Tab text="Generate">
+                    <content>
+                        <fx:include fx:id="generateTab" source="generate.fxml"/>
+                    </content>
+                </Tab>
+                <Tab text="Compare">
+                    <content>
+                        <fx:include fx:id="compareTab" source="comparison.fxml"/>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>
