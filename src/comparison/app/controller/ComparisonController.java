@@ -1,4 +1,4 @@
-package comparison.controller;
+package comparison.app.controller;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -51,10 +51,10 @@ public class ComparisonController extends ControllerHelper implements Initializa
     @FXML
     private void compare() {
         boolean readyStatus =
-                validator.validate(browseFirst, labelFirstStore, propertiesReader.getProperty("browseFirstError")) &
-                        validator.validate(browseSecond, labelSecondStore, propertiesReader.getProperty("browseSecondError")) &
-                        validator.validate(browseComparePath, labelCompareStore, propertiesReader.getProperty("browseComparePathError"));
-        if (readyStatus && alerts.informationAlert(propertiesReader.getProperty("compareInformationAlert"))) {
+                validator.validate(browseFirst, labelFirstStore, dictionary.getProperty("browseFirstError")) &
+                        validator.validate(browseSecond, labelSecondStore, dictionary.getProperty("browseSecondError")) &
+                        validator.validate(browseComparePath, labelCompareStore, dictionary.getProperty("browseComparePathError"));
+        if (readyStatus && alerts.informationAlert(dictionary.getProperty("compareInformationAlert"))) {
             executor((System.getProperty("os.name").equals("Linux") ? "gnome-terminal -- " : "cmd /c start compare.cmd ") +
                     browseFirst.getText() + " " +
                     browseSecond.getText() + " " +

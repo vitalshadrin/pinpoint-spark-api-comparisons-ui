@@ -1,4 +1,4 @@
-package comparison.controller;
+package comparison.app.controller;
 
 import javafx.fxml.FXML;
 

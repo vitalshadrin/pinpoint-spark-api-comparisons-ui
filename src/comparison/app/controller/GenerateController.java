@@ -1,4 +1,4 @@
-package comparison.controller;
+package comparison.app.controller;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -35,9 +35,9 @@ public class GenerateController extends ControllerHelper implements Initializabl
     @FXML
     private void generate() {
         boolean readyStatus =
-                validator.validate(url, urlLabel,  propertiesReader.getProperty("urlError")) &
-                        validator.validate(endpointStorePath, labelGenerateStore, propertiesReader.getProperty("endpointStorePathError"));
-        if (readyStatus && alerts.informationAlert( propertiesReader.getProperty("generateInformationAlert"))) {
+                validator.validate(url, urlLabel,  dictionary.getProperty("urlError")) &
+                        validator.validate(endpointStorePath, labelGenerateStore, dictionary.getProperty("endpointStorePathError"));
+        if (readyStatus && alerts.informationAlert( dictionary.getProperty("generateInformationAlert"))) {
             executor((System.getProperty("os.name").equals("Linux") ? "gnome-terminal -- " : "cmd /c start generate1.cmd ")
                     + url.getText() + " "
                     + endpointStorePath.getText());

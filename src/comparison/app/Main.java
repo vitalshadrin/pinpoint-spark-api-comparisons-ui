@@ -1,4 +1,4 @@
-package comparison;
+package comparison.app;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -14,14 +14,14 @@ public class Main extends Application {
     public void start(Stage stage) {
         stage.setTitle("Comparison");
         stage.setResizable(false);
-        stage.setScene(new Scene(rootNode, 563, 350));
-        stage.getIcons().add(new Image(getClass().getResourceAsStream("icons/ic_launcher.png")));
+        stage.setScene(new Scene(rootNode, 563, 380));
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("../icons/ic_launcher.png")));
         stage.show();
     }
 
     @Override
     public void init() throws Exception {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("fxml/main.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../fxml/main.fxml"));
         rootNode = fxmlLoader.load();
     }
 

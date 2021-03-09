@@ -1,4 +1,4 @@
-package comparison.components;
+package comparison.app.components;
 
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
