@@ -10,7 +10,7 @@
    <children>
       <ScrollPane prefHeight="350.0" prefWidth="563.0">
         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="525.0" prefWidth="0.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="527.0" prefWidth="0.0">
                <children>
                   <Accordion prefHeight="100.0" prefWidth="563.0">
                     <panes>
