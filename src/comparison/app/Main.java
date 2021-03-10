@@ -14,7 +14,7 @@ public class Main extends Application {
     public void start(Stage stage) {
         stage.setTitle("Comparison");
         stage.setResizable(false);
-        stage.setScene(new Scene(rootNode, 563, 380));
+        stage.setScene(new Scene(rootNode, 563, 410));
         stage.getIcons().add(new Image(getClass().getResourceAsStream("../icons/ic_launcher.png")));
         stage.show();
     }

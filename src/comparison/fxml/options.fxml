@@ -4,121 +4,206 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.effect.Blend?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchorId" prefHeight="350.0" prefWidth="563.0" style="-fx-background-color: #ebebeb;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="comparison.app.controller.OptionsController">
-   <children>
-      <ScrollPane prefHeight="350.0" prefWidth="563.0">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="527.0" prefWidth="0.0">
-               <children>
-                  <Accordion prefHeight="100.0" prefWidth="563.0">
-                    <panes>
-                      <TitledPane animated="false" text="API">
-                           <content>
-                              <TextField prefHeight="25.0" prefWidth="130.0" text="all" />
-                           </content>
-                        </TitledPane>
-                      <TitledPane animated="false" prefHeight="65.0" prefWidth="494.0" text="DEMOGRAPHICS">
-                           <content>
-                              <TextField prefHeight="25.0" prefWidth="130.0" text="all" />
-                           </content>
-                        </TitledPane>
-                        <TitledPane animated="false" layoutX="10.0" layoutY="35.0" text="MEDIA">
-                           <content>
-                              <TextField prefHeight="25.0" prefWidth="130.0" text="all" />
-                           </content>
-                        </TitledPane>
-                        <TitledPane animated="false" layoutX="10.0" layoutY="60.0" text="PERIODS">
-                           <content>
-                              <TextField prefHeight="25.0" prefWidth="130.0" text="all" />
-                           </content>
-                        </TitledPane>
-                        <TitledPane animated="false" layoutX="10.0" layoutY="85.0" text="UNIVERSES">
-                           <content>
-                              <TextField prefHeight="25.0" prefWidth="130.0" text="total" />
-                           </content>
-                        </TitledPane>
-                        <TitledPane animated="false" layoutX="10.0" layoutY="110.0" text="SUBUNIVERSES">
-                           <content>
-                              <TextField prefHeight="25.0" prefWidth="130.0" text="all" />
-                           </content>
-                        </TitledPane>
-                        <TitledPane animated="false" text="CROSSPERIODS">
-                           <content>
-                              <TextField prefHeight="25.0" prefWidth="130.0" text="no" />
-                           </content>
-                        </TitledPane>
-                        <TitledPane animated="false" text="BUILD">
-                           <content>
-                              <TextField prefHeight="25.0" prefWidth="130.0" />
-                           </content>
-                        </TitledPane>
-                        <TitledPane animated="false" text="THREADS">
-                           <content>
-                              <TextField prefHeight="25.0" prefWidth="130.0" text="1" />
-                           </content>
-                        </TitledPane>
-                        <TitledPane animated="false" text="THRESHOLD">
-                           <content>
-                              <TextField prefHeight="25.0" prefWidth="130.0" text="60" />
-                           </content>
-                        </TitledPane>
-                        <TitledPane animated="false" text="MINIMUMFRACTION">
-                           <content>
-                              <TextField prefHeight="25.0" prefWidth="130.0" text="0.75" />
-                           </content>
-                        </TitledPane>
-                        <TitledPane animated="false" text="TOLERANCE">
-                           <content>
-                              <TextField prefHeight="25.0" prefWidth="130.0" text="0.001" />
-                           </content>
-                        </TitledPane>
-                        <TitledPane animated="false" text="KPITYPE">
-                           <content>
-                              <TextField prefHeight="25.0" prefWidth="130.0" text="contactProbabilityGRP" />
-                           </content>
-                        </TitledPane>
-                        <TitledPane animated="false" text="PLANNER_URL">
-                           <content>
-                              <TextField prefHeight="25.0" prefWidth="130.0" text="https://nmi-engine-us-dev.azurewebsites.net/2.0/US/" />
-                           </content>
-                        </TitledPane>
-                        <TitledPane animated="false" text="RESOURCE_API_URL">
-                           <content>
-                              <TextField prefHeight="25.0" prefWidth="130.0" text="http://resource-api-it.aws.eu.pointlogic.co" />
-                           </content>
-                        </TitledPane>
-                        <TitledPane animated="false" text="IfUPdiff">
-                           <content>
-                              <TextField prefHeight="25.0" prefWidth="130.0" text="block" />
-                           </content>
-                        </TitledPane>
-                        <TitledPane animated="false" text="threshold_UPdiff">
-                           <content>
-                              <TextField prefHeight="25.0" prefWidth="130.0" text="0.01" />
-                           </content>
-                        </TitledPane>
-                        <TitledPane animated="false" text="skippedreports_UPdiff">
-                           <content>
-                              <TextField prefHeight="25.0" prefWidth="130.0" text="KPIPERTARGET,TIMESPENT,REACH" />
-                           </content>
-                        </TitledPane>
-                        <TitledPane animated="false" text="CACHE">
-                           <content>
-                              <TextField prefHeight="25.0" prefWidth="130.0" text="no" />
-                           </content>
-                        </TitledPane>
-                        <TitledPane animated="false" text="METRICS_GROUPKEY">
-                           <content>
-                              <TextField prefHeight="25.0" prefWidth="130.0" text="total" />
-                           </content>
-                        </TitledPane>
-                    </panes>
-                  </Accordion>
-               </children>
-            </AnchorPane>
-        </content>
-      </ScrollPane>
-   </children>
+<AnchorPane fx:id="optionsId" prefHeight="370.0" prefWidth="563.0" style="-fx-background-color: #ebebeb;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="comparison.app.controller.OptionsController">
+    <children>
+        <ScrollPane prefHeight="380.0" prefWidth="563.0">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="532.0" prefWidth="0.0">
+                    <children>
+                        <Accordion prefHeight="100.0" prefWidth="563.0">
+                            <panes>
+                                <TitledPane text="API">
+                                    <content>
+                                        <TextField fx:id="api" prefHeight="25.0" prefWidth="130.0" text="all" accessibleHelp="API">
+                                            <font>
+                                                <Font name="System Bold" size="15.0" />
+                                            </font>
+                                        </TextField>
+                                    </content>
+                                </TitledPane>
+                                <TitledPane prefHeight="65.0" prefWidth="494.0" text="DEMOGRAPHICS">
+                                    <content>
+                                        <TextField fx:id="demographics" prefHeight="25.0" prefWidth="130.0" text="all" accessibleHelp="DEMOGRAPHICS">
+                                            <font>
+                                                <Font name="System Bold" size="15.0" />
+                                            </font>
+                                        </TextField>
+                                    </content>
+                                    <effect>
+                                        <Blend />
+                                    </effect>
+                                </TitledPane>
+                                <TitledPane layoutX="10.0" layoutY="35.0" text="MEDIA">
+                                    <content>
+                                        <TextField prefHeight="25.0" prefWidth="130.0" text="all">
+                                            <font>
+                                                <Font name="System Bold" size="15.0" />
+                                            </font>
+                                        </TextField>
+                                    </content>
+                                </TitledPane>
+                                <TitledPane layoutX="10.0" layoutY="60.0" text="PERIODS">
+                                    <content>
+                                        <TextField prefHeight="25.0" prefWidth="130.0" text="all">
+                                            <font>
+                                                <Font name="System Bold" size="15.0" />
+                                            </font>
+                                        </TextField>
+                                    </content>
+                                </TitledPane>
+                                <TitledPane layoutX="10.0" layoutY="85.0" text="UNIVERSES">
+                                    <content>
+                                        <TextField prefHeight="25.0" prefWidth="130.0" text="total">
+                                            <font>
+                                                <Font name="System Bold" size="15.0" />
+                                            </font>
+                                        </TextField>
+                                    </content>
+                                </TitledPane>
+                                <TitledPane layoutX="10.0" layoutY="110.0" text="SUBUNIVERSES">
+                                    <content>
+                                        <TextField prefHeight="25.0" prefWidth="130.0" text="all">
+                                            <font>
+                                                <Font name="System Bold" size="15.0" />
+                                            </font>
+                                        </TextField>
+                                    </content>
+                                </TitledPane>
+                                <TitledPane text="CROSSPERIODS">
+                                    <content>
+                                        <TextField prefHeight="25.0" prefWidth="130.0" text="no">
+                                            <font>
+                                                <Font name="System Bold" size="15.0" />
+                                            </font>
+                                        </TextField>
+                                    </content>
+                                </TitledPane>
+                                <TitledPane text="BUILD">
+                                    <content>
+                                        <TextField prefHeight="25.0" prefWidth="130.0">
+                                            <font>
+                                                <Font name="System Bold" size="15.0" />
+                                            </font>
+                                        </TextField>
+                                    </content>
+                                </TitledPane>
+                                <TitledPane text="THREADS">
+                                    <content>
+                                        <TextField prefHeight="25.0" prefWidth="130.0" text="1">
+                                            <font>
+                                                <Font name="System Bold" size="15.0" />
+                                            </font>
+                                        </TextField>
+                                    </content>
+                                </TitledPane>
+                                <TitledPane text="THRESHOLD">
+                                    <content>
+                                        <TextField prefHeight="25.0" prefWidth="130.0" text="60">
+                                            <font>
+                                                <Font name="System Bold" size="15.0" />
+                                            </font>
+                                        </TextField>
+                                    </content>
+                                </TitledPane>
+                                <TitledPane text="MINIMUMFRACTION">
+                                    <content>
+                                        <TextField prefHeight="25.0" prefWidth="130.0" text="0.75">
+                                            <font>
+                                                <Font name="System Bold" size="15.0" />
+                                            </font>
+                                        </TextField>
+                                    </content>
+                                </TitledPane>
+                                <TitledPane text="TOLERANCE">
+                                    <content>
+                                        <TextField prefHeight="25.0" prefWidth="130.0" text="0.001">
+                                            <font>
+                                                <Font name="System Bold" size="15.0" />
+                                            </font>
+                                        </TextField>
+                                    </content>
+                                </TitledPane>
+                                <TitledPane text="KPITYPE">
+                                    <content>
+                                        <TextField prefHeight="25.0" prefWidth="130.0" text="contactProbabilityGRP">
+                                            <font>
+                                                <Font name="System Bold" size="15.0" />
+                                            </font>
+                                        </TextField>
+                                    </content>
+                                </TitledPane>
+                                <TitledPane text="PLANNER_URL">
+                                    <content>
+                                        <TextField prefHeight="25.0" prefWidth="130.0" text="https://nmi-engine-us-dev.azurewebsites.net/2.0/US/">
+                                            <font>
+                                                <Font name="System Bold" size="15.0" />
+                                            </font>
+                                        </TextField>
+                                    </content>
+                                </TitledPane>
+                                <TitledPane text="RESOURCE_API_URL">
+                                    <content>
+                                        <TextField prefHeight="25.0" prefWidth="130.0" text="http://resource-api-it.aws.eu.pointlogic.co">
+                                            <font>
+                                                <Font name="System Bold" size="15.0" />
+                                            </font>
+                                        </TextField>
+                                    </content>
+                                </TitledPane>
+                                <TitledPane text="IfUPdiff">
+                                    <content>
+                                        <TextField prefHeight="25.0" prefWidth="130.0" text="block">
+                                            <font>
+                                                <Font name="System Bold" size="15.0" />
+                                            </font>
+                                        </TextField>
+                                    </content>
+                                </TitledPane>
+                                <TitledPane text="threshold_UPdiff">
+                                    <content>
+                                        <TextField prefHeight="25.0" prefWidth="130.0" text="0.01">
+                                            <font>
+                                                <Font name="System Bold" size="15.0" />
+                                            </font>
+                                        </TextField>
+                                    </content>
+                                </TitledPane>
+                                <TitledPane text="skippedreports_UPdiff">
+                                    <content>
+                                        <TextField prefHeight="25.0" prefWidth="130.0" text="KPIPERTARGET,TIMESPENT,REACH">
+                                            <font>
+                                                <Font name="System Bold" size="15.0" />
+                                            </font>
+                                        </TextField>
+                                    </content>
+                                </TitledPane>
+                                <TitledPane text="CACHE">
+                                    <content>
+                                        <TextField prefHeight="25.0" prefWidth="130.0" text="no">
+                                            <font>
+                                                <Font name="System Bold" size="15.0" />
+                                            </font>
+                                        </TextField>
+                                    </content>
+                                </TitledPane>
+                                <TitledPane text="METRICS_GROUPKEY">
+                                    <content>
+                                        <TextField prefHeight="25.0" prefWidth="130.0" text="total">
+                                            <font>
+                                                <Font name="System Bold" size="15.0" />
+                                            </font>
+                                        </TextField>
+                                    </content>
+                                </TitledPane>
+                            </panes>
+                        </Accordion>
+                    </children>
+                </AnchorPane>
+            </content>
+        </ScrollPane>
+    </children>
 </AnchorPane>

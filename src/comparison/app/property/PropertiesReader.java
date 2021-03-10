@@ -5,11 +5,6 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class PropertiesReader {
-    private Properties properties;
-
-    public PropertiesReader(PropertyPath propertyPath) {
-        properties = getProperty(propertyPath.getPropertyPath());
-    }
 
     private Properties getProperty(String propertyName) {
         FileInputStream fileInputStream;
@@ -24,8 +19,8 @@ public class PropertiesReader {
         return null;
     }
 
-    public Properties getProperties() {
-        return properties;
+    public Properties getProperties(PropertyPath propertyPath) {
+        return getProperty(propertyPath.getPropertyPath());
     }
 }
 

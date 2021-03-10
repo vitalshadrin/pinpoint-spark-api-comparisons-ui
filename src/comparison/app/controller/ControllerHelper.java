@@ -21,11 +21,13 @@ public class ControllerHelper {
     Validator validator;
     Alerts alerts;
     Properties dictionary;
+    Properties options;
 
     ControllerHelper() {
         this.validator = new Validator();
         this.alerts = new Alerts();
-        this.dictionary = new PropertiesReader(PropertyPath.DICTIONARY).getProperties();
+        this.dictionary = new PropertiesReader().getProperties(PropertyPath.DICTIONARY);
+        this.options =  new PropertiesReader().getProperties(PropertyPath.OPTIONS);
     }
 
     /*
