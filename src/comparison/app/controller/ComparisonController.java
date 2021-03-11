@@ -51,10 +51,10 @@ public class ComparisonController extends ControllerHelper implements Initializa
     @FXML
     private void compare() {
         boolean readyStatus =
-                validator.validate(browseFirst, labelFirstStore, dictionary.getProperty("browseFirstError")) &
-                        validator.validate(browseSecond, labelSecondStore, dictionary.getProperty("browseSecondError")) &
-                        validator.validate(browseComparePath, labelCompareStore, dictionary.getProperty("browseComparePathError"));
-        if (readyStatus && alerts.informationAlert(dictionary.getProperty("compareInformationAlert"))) {
+                validator.validate(browseFirst, labelFirstStore, dictionary.getProperties().getProperty("browseFirstError")) &
+                        validator.validate(browseSecond, labelSecondStore, dictionary.getProperties().getProperty("browseSecondError")) &
+                        validator.validate(browseComparePath, labelCompareStore, dictionary.getProperties().getProperty("browseComparePathError"));
+        if (readyStatus && alerts.informationAlert(dictionary.getProperties().getProperty("compareInformationAlert"))) {
             executor((System.getProperty("os.name").equals("Linux") ? "gnome-terminal -- " : "cmd /c start compare.cmd ") +
                     browseFirst.getText() + " " +
                     browseSecond.getText() + " " +
@@ -62,7 +62,7 @@ public class ComparisonController extends ControllerHelper implements Initializa
         }
     }
 
-    @Override
+    @FXML
     public void initialize(URL location, ResourceBundle resources) {
         HashMap<TextField, Label> textFieldLabelHashMap = new HashMap<TextField, Label>() {{
             put(browseFirst, labelFirstStore);

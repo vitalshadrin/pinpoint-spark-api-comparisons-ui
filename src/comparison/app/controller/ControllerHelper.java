@@ -13,21 +13,20 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Properties;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class ControllerHelper {
     Validator validator;
     Alerts alerts;
-    Properties dictionary;
-    Properties options;
+    PropertiesReader dictionary;
+    PropertiesReader options;
 
     ControllerHelper() {
         this.validator = new Validator();
         this.alerts = new Alerts();
-        this.dictionary = new PropertiesReader().getProperties(PropertyPath.DICTIONARY);
-        this.options =  new PropertiesReader().getProperties(PropertyPath.OPTIONS);
+        this.dictionary = new PropertiesReader(PropertyPath.DICTIONARY);
+        this.options = new PropertiesReader(PropertyPath.OPTIONS);
     }
 
     /*
