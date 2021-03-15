@@ -1,9 +1,8 @@
 package comparison.app.controller;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Tab;
 
-public class MainController extends ControllerHelper{
+public class MainController extends ControllerHelper {
 
     @FXML
     private OptionsController optionsController;

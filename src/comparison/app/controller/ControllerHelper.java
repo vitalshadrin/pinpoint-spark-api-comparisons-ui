@@ -13,6 +13,9 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -21,17 +24,27 @@ public class ControllerHelper {
     Alerts alerts;
     PropertiesReader dictionary;
     PropertiesReader options;
+    List<TextField> textFields;
 
     ControllerHelper() {
         this.validator = new Validator();
         this.alerts = new Alerts();
         this.dictionary = new PropertiesReader(PropertyPath.DICTIONARY);
         this.options = new PropertiesReader(PropertyPath.OPTIONS);
+        this.textFields = new ArrayList<>();
     }
 
-    /*
-     * anchorId - Main Anchor Pane
-     * textField - Text Field To set Path
+    /**
+     * @param textFields
+     * method set all options in list
+     */
+    public void setTextFields(TextField... textFields) {
+        Arrays.asList(textFields).forEach(textField -> this.textFields.add(textField));
+    }
+
+    /**
+     * @param anchorId - Main Anchor Pane
+     * @param textField - Text Field To set Path
      * method help to select directory
      */
     public void browseEndpoint(AnchorPane anchorId, TextField textField) {
@@ -43,8 +56,8 @@ public class ControllerHelper {
         }
     }
 
-    /*
-     * command - command which need to run in shell
+    /**
+     * @param command - command which need to run in shell
      * method help to execute command in shell
      */
     public void executor(String command) {

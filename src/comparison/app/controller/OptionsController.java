@@ -4,8 +4,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
-import java.awt.event.ActionEvent;
-import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class OptionsController extends ControllerHelper {
@@ -14,28 +14,32 @@ public class OptionsController extends ControllerHelper {
     TextField api;
 
     @FXML
-    Button save;
-
-    @FXML
     TextField demographics;
 
     @FXML
+    Button save;
+
+    @FXML
     private void saveOptions() {
-        TextField[] fields = {api, demographics};
-        Arrays.asList(fields).forEach(field -> {
-            System.out.println(field.getAccessibleHelp() + " = " + field.getText());
-            options.saveProperty(field.getAccessibleHelp(), field.getText());
-        });
+        Map<String, String> fields = new HashMap<>();
+        textFields.forEach(textField -> fields.put(textField.getAccessibleHelp(), textField.getText()));
+        options.saveProperty(fields);
+    }
+
+    @FXML
+    private void undoOptions() {
+        setOption();
     }
 
     @FXML
     public void initialize() {
-        TextField[] fields = {api, demographics};
-        Arrays.asList(fields).forEach(field -> {
-            field.setText(options.getProperties().getProperty(field.getAccessibleHelp()));
-        });
+        setOption();
     }
 
+    private void setOption() {
+        setTextFields(api, demographics);
+        textFields.forEach(textField -> textField.setText(options.getProperties().getProperty(textField.getAccessibleHelp())));
+    }
 }
 
 
