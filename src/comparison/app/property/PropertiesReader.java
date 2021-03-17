@@ -1,5 +1,7 @@
 package comparison.app.property;
 
+import comparison.app.controller.ControllerHelper;
+
 import java.io.*;
 import java.util.Arrays;
 import java.util.List;
@@ -7,7 +9,7 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.stream.Collectors;
 
-public class PropertiesReader {
+public class PropertiesReader  {
     private final Properties properties;
     private final PropertyPath propertyPath;
 
@@ -44,7 +46,7 @@ public class PropertiesReader {
                 file.close();
                 // replace data
                 List<String> inputStr = Arrays.asList(inputBuffer.toString().split("\n"));
-                String saveData = inputStr.stream().map(data -> (data.contains(key + "=") && !data.startsWith("#")) ? key + "=" + value : data).collect(Collectors.joining("\n"));
+                String saveData = inputStr.stream().map(data -> (data.startsWith(key + "=") && !data.startsWith("#")) ? key + "=" + value : data).collect(Collectors.joining("\n"));
                 // write the new string with the replaced line OVER the same file
                 FileOutputStream fileOut = new FileOutputStream(this.propertyPath.getPropertyPath());
                 fileOut.write(saveData.getBytes());
