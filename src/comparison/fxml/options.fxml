@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.effect.Blend?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.*?>
-<AnchorPane fx:id="optionsId" prefHeight="595.0" prefWidth="568.0" style="-fx-background-color: #ebebeb;"
-            xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="comparison.app.controller.OptionsController">
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="optionsId" prefHeight="595.0" prefWidth="568.0" style="-fx-background-color: #ebebeb;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="comparison.app.controller.OptionsController">
     <children>
         <ScrollPane prefHeight="380.0" prefWidth="563.0">
             <content>
@@ -18,200 +21,181 @@
                                     <content>
                                         <TextField fx:id="api" accessibleHelp="API" prefHeight="25.0" prefWidth="130.0">
                                             <font>
-                                                <Font name="System Bold" size="15.0"/>
+                                                <Font name="System Bold" size="13.0" />
                                             </font>
                                         </TextField>
                                     </content>
                                 </TitledPane>
                                 <TitledPane fx:id="t_demographics" accessibleHelp="DEMOGRAPHICS">
                                     <content>
-                                        <TextField fx:id="demographics" accessibleHelp="DEMOGRAPHICS" prefHeight="25.0"
-                                                   prefWidth="130.0">
+                                        <TextField fx:id="demographics" accessibleHelp="DEMOGRAPHICS" prefHeight="25.0" prefWidth="130.0">
                                             <font>
-                                                <Font name="System Bold" size="15.0"/>
+                                                <Font name="System Bold" size="13.0" />
                                             </font>
                                         </TextField>
                                     </content>
                                     <effect>
-                                        <Blend/>
+                                        <Blend />
                                     </effect>
                                 </TitledPane>
                                 <TitledPane fx:id="t_media" accessibleHelp="MEDIA">
                                     <content>
-                                        <TextField fx:id="media" accessibleHelp="MEDIA" prefHeight="25.0"
-                                                   prefWidth="130.0">
+                                        <TextField fx:id="media" accessibleHelp="MEDIA" prefHeight="25.0" prefWidth="130.0">
                                             <font>
-                                                <Font name="System Bold" size="15.0"/>
+                                                <Font name="System Bold" size="13.0" />
                                             </font>
                                         </TextField>
                                     </content>
                                 </TitledPane>
                                 <TitledPane fx:id="t_periods" accessibleHelp="PERIODS">
                                     <content>
-                                        <TextField fx:id="periods" accessibleHelp="PERIODS" prefHeight="25.0"
-                                                   prefWidth="130.0">
+                                        <TextField fx:id="periods" accessibleHelp="PERIODS" prefHeight="25.0" prefWidth="130.0">
                                             <font>
-                                                <Font name="System Bold" size="15.0"/>
+                                                <Font name="System Bold" size="13.0" />
                                             </font>
                                         </TextField>
                                     </content>
                                 </TitledPane>
                                 <TitledPane fx:id="t_universes" accessibleHelp="UNIVERSES">
                                     <content>
-                                        <TextField fx:id="universes" accessibleHelp="UNIVERSES" prefHeight="25.0"
-                                                   prefWidth="130.0">
+                                        <TextField fx:id="universes" accessibleHelp="UNIVERSES" prefHeight="25.0" prefWidth="130.0">
                                             <font>
-                                                <Font name="System Bold" size="15.0"/>
+                                                <Font name="System Bold" size="13.0" />
                                             </font>
                                         </TextField>
                                     </content>
                                 </TitledPane>
                                 <TitledPane fx:id="t_subuniverses" accessibleHelp="SUBUNIVERSES">
                                     <content>
-                                        <TextField fx:id="subuniverses" accessibleHelp="SUBUNIVERSES" prefHeight="25.0"
-                                                   prefWidth="130.0">
+                                        <TextField fx:id="subuniverses" accessibleHelp="SUBUNIVERSES" prefHeight="25.0" prefWidth="130.0">
                                             <font>
-                                                <Font name="System Bold" size="15.0"/>
+                                                <Font name="System Bold" size="13.0" />
                                             </font>
                                         </TextField>
                                     </content>
                                 </TitledPane>
                                 <TitledPane fx:id="t_crossperiods" accessibleHelp="CROSSPERIODS">
                                     <content>
-                                        <TextField fx:id="crossperiods" accessibleHelp="CROSSPERIODS" prefHeight="25.0"
-                                                   prefWidth="130.0">
+                                        <TextField fx:id="crossperiods" accessibleHelp="CROSSPERIODS" prefHeight="25.0" prefWidth="130.0">
                                             <font>
-                                                <Font name="System Bold" size="15.0"/>
+                                                <Font name="System Bold" size="13.0" />
                                             </font>
                                         </TextField>
                                     </content>
                                 </TitledPane>
                                 <TitledPane fx:id="t_build" accessibleHelp="BUILD">
                                     <content>
-                                        <TextField fx:id="build" accessibleHelp="BUILD" prefHeight="25.0"
-                                                   prefWidth="130.0">
+                                        <TextField fx:id="build" accessibleHelp="BUILD" prefHeight="25.0" prefWidth="130.0">
                                             <font>
-                                                <Font name="System Bold" size="15.0"/>
+                                                <Font name="System Bold" size="13.0" />
                                             </font>
                                         </TextField>
                                     </content>
                                 </TitledPane>
                                 <TitledPane fx:id="t_threads" accessibleHelp="THREADS">
                                     <content>
-                                        <TextField fx:id="threads" accessibleHelp="THREADS" prefHeight="25.0"
-                                                   prefWidth="130.0">
+                                        <TextField fx:id="threads" accessibleHelp="THREADS" prefHeight="25.0" prefWidth="130.0">
                                             <font>
-                                                <Font name="System Bold" size="15.0"/>
+                                                <Font name="System Bold" size="13.0" />
                                             </font>
                                         </TextField>
                                     </content>
                                 </TitledPane>
                                 <TitledPane fx:id="t_threshold" accessibleHelp="THRESHOLD">
                                     <content>
-                                        <TextField fx:id="threshold" accessibleHelp="THRESHOLD" prefHeight="25.0"
-                                                   prefWidth="130.0">
+                                        <TextField fx:id="threshold" accessibleHelp="THRESHOLD" prefHeight="25.0" prefWidth="130.0">
                                             <font>
-                                                <Font name="System Bold" size="15.0"/>
+                                                <Font name="System Bold" size="13.0" />
                                             </font>
                                         </TextField>
                                     </content>
                                 </TitledPane>
                                 <TitledPane fx:id="t_minimumfraction" accessibleHelp="MINIMUMFRACTION">
                                     <content>
-                                        <TextField fx:id="minimumfraction" accessibleHelp="MINIMUMFRACTION"
-                                                   prefHeight="25.0" prefWidth="130.0">
+                                        <TextField fx:id="minimumfraction" accessibleHelp="MINIMUMFRACTION" prefHeight="25.0" prefWidth="130.0">
                                             <font>
-                                                <Font name="System Bold" size="15.0"/>
+                                                <Font name="System Bold" size="13.0" />
                                             </font>
                                         </TextField>
                                     </content>
                                 </TitledPane>
                                 <TitledPane fx:id="t_tolerance" accessibleHelp="TOLERANCE">
                                     <content>
-                                        <TextField fx:id="tolerance" accessibleHelp="TOLERANCE" prefHeight="25.0"
-                                                   prefWidth="130.0">
+                                        <TextField fx:id="tolerance" accessibleHelp="TOLERANCE" prefHeight="25.0" prefWidth="130.0">
                                             <font>
-                                                <Font name="System Bold" size="15.0"/>
+                                                <Font name="System Bold" size="13.0" />
                                             </font>
                                         </TextField>
                                     </content>
                                 </TitledPane>
                                 <TitledPane fx:id="t_kpitype" accessibleHelp="KPITYPE">
                                     <content>
-                                        <TextField fx:id="kpitype" accessibleHelp="KPITYPE" prefHeight="25.0"
-                                                   prefWidth="130.0">
+                                        <TextField fx:id="kpitype" accessibleHelp="KPITYPE" prefHeight="25.0" prefWidth="130.0">
                                             <font>
-                                                <Font name="System Bold" size="15.0"/>
+                                                <Font name="System Bold" size="13.0" />
                                             </font>
                                         </TextField>
                                     </content>
                                 </TitledPane>
                                 <TitledPane fx:id="t_plannerUrl" accessibleHelp="PLANNER_URL">
                                     <content>
-                                        <TextField fx:id="plannerUrl" accessibleHelp="PLANNER_URL" prefHeight="25.0"
-                                                   prefWidth="130.0">
+                                        <TextField fx:id="plannerUrl" accessibleHelp="PLANNER_URL" prefHeight="25.0" prefWidth="130.0">
                                             <font>
-                                                <Font name="System Bold" size="15.0"/>
+                                                <Font name="System Bold" size="13.0" />
                                             </font>
                                         </TextField>
                                     </content>
                                 </TitledPane>
                                 <TitledPane fx:id="t_resorceApi" accessibleHelp="RESOURCE_API_URL">
                                     <content>
-                                        <TextField fx:id="resorceApi" accessibleHelp="RESOURCE_API_URL"
-                                                   prefHeight="25.0" prefWidth="130.0">
+                                        <TextField fx:id="resorceApi" accessibleHelp="RESOURCE_API_URL" prefHeight="25.0" prefWidth="130.0">
                                             <font>
-                                                <Font name="System Bold" size="15.0"/>
+                                                <Font name="System Bold" size="13.0" />
                                             </font>
                                         </TextField>
                                     </content>
                                 </TitledPane>
                                 <TitledPane fx:id="t_ifupdiff" accessibleHelp="IfUPdiff">
                                     <content>
-                                        <TextField fx:id="ifupdiff" accessibleHelp="IfUPdiff" prefHeight="25.0"
-                                                   prefWidth="130.0">
+                                        <TextField fx:id="ifupdiff" accessibleHelp="IfUPdiff" prefHeight="25.0" prefWidth="130.0">
                                             <font>
-                                                <Font name="System Bold" size="15.0"/>
+                                                <Font name="System Bold" size="13.0" />
                                             </font>
                                         </TextField>
                                     </content>
                                 </TitledPane>
                                 <TitledPane fx:id="t_thresholdUpdiff" accessibleHelp="threshold_UPdiff">
                                     <content>
-                                        <TextField fx:id="thresholdUpdiff" accessibleHelp="threshold_UPdiff"
-                                                   prefHeight="25.0" prefWidth="130.0">
+                                        <TextField fx:id="thresholdUpdiff" accessibleHelp="threshold_UPdiff" prefHeight="25.0" prefWidth="130.0">
                                             <font>
-                                                <Font name="System Bold" size="15.0"/>
+                                                <Font name="System Bold" size="13.0" />
                                             </font>
                                         </TextField>
                                     </content>
                                 </TitledPane>
                                 <TitledPane fx:id="t_skippedreportsUpdiff" accessibleHelp="skippedreports_UPdiff">
                                     <content>
-                                        <TextField fx:id="skippedreportsUpdiff" accessibleHelp="skippedreports_UPdiff"
-                                                   prefHeight="25.0" prefWidth="130.0">
+                                        <TextField fx:id="skippedreportsUpdiff" accessibleHelp="skippedreports_UPdiff" prefHeight="25.0" prefWidth="130.0">
                                             <font>
-                                                <Font name="System Bold" size="15.0"/>
+                                                <Font name="System Bold" size="13.0" />
                                             </font>
                                         </TextField>
                                     </content>
                                 </TitledPane>
                                 <TitledPane fx:id="t_cache" accessibleHelp="CACHE">
                                     <content>
-                                        <TextField fx:id="cache" accessibleHelp="CACHE" prefHeight="25.0"
-                                                   prefWidth="130.0">
+                                        <TextField fx:id="cache" accessibleHelp="CACHE" prefHeight="25.0" prefWidth="130.0">
                                             <font>
-                                                <Font name="System Bold" size="15.0"/>
+                                                <Font name="System Bold" size="13.0" />
                                             </font>
                                         </TextField>
                                     </content>
                                 </TitledPane>
                                 <TitledPane fx:id="t_metricsGroupKey" accessibleHelp="METRICS_GROUPKEY">
                                     <content>
-                                        <TextField fx:id="metricsGroupKey" accessibleHelp="METRICS_GROUPKEY"
-                                                   prefHeight="25.0" prefWidth="130.0">
+                                        <TextField fx:id="metricsGroupKey" accessibleHelp="METRICS_GROUPKEY" prefHeight="25.0" prefWidth="130.0">
                                             <font>
-                                                <Font name="System Bold" size="15.0"/>
+                                                <Font name="System Bold" size="13.0" />
                                             </font>
                                         </TextField>
                                     </content>
@@ -222,16 +206,14 @@
                 </AnchorPane>
             </content>
         </ScrollPane>
-        <Button fx:id="save" layoutX="222.0" layoutY="388.0" mnemonicParsing="false" onAction="#saveOptions"
-                prefHeight="25.0" prefWidth="71.0" text="Save" textOverrun="CLIP">
+        <Button fx:id="save" layoutX="200.0" layoutY="388.0" mnemonicParsing="false" onAction="#saveOptions" prefHeight="25.0" prefWidth="71.0" text="Save" textOverrun="CLIP">
             <font>
-                <Font name="System Bold" size="12.0"/>
+                <Font name="System Bold" size="13.0" />
             </font>
         </Button>
-        <Button fx:id="undoOptions" layoutX="318.0" layoutY="388.0" mnemonicParsing="false" onAction="#undoOptions"
-                prefHeight="25.0" prefWidth="71.0" text="Undo">
+        <Button fx:id="undoOptions" layoutX="290.0" layoutY="388.0" mnemonicParsing="false" onAction="#undoOptions" prefHeight="25.0" prefWidth="71.0" text="Undo">
             <font>
-                <Font name="System Bold" size="12.0"/>
+                <Font name="System Bold" size="13.0" />
             </font>
         </Button>
     </children>

@@ -6,6 +6,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TitledPane;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -105,7 +107,7 @@ public class OptionsController extends ControllerHelper {
         options.saveProperty(fields);
         updateOptions();
         optionsFields.keySet().forEach(titledPane ->
-                titledPane.setText(titledPane.getAccessibleHelp() + " (value: " + options.getProperties().getProperty(titledPane.getAccessibleHelp()) + ")"));
+                titledPane.setText(titledPane.getAccessibleHelp() + " (" + options.getProperties().getProperty(titledPane.getAccessibleHelp()) + ")"));
     }
 
     @FXML
@@ -127,7 +129,8 @@ public class OptionsController extends ControllerHelper {
                         minimumfraction, tolerance, kpitype, plannerUrl, resorceApi, ifupdiff, thresholdUpdiff, skippedreportsUpdiff, cache, metricsGroupKey)
         );
         optionsFields.forEach((titledPane, textField) -> {
-            titledPane.setText(titledPane.getAccessibleHelp() + " (value: " + options.getProperties().getProperty(titledPane.getAccessibleHelp()) + ")");
+            titledPane.setText(titledPane.getAccessibleHelp() + " (" + options.getProperties().getProperty(titledPane.getAccessibleHelp()) + ")");
+            titledPane.setFont(Font.font(null, FontWeight.BOLD, 12));
             textField.setText(options.getProperties().getProperty(textField.getAccessibleHelp()));
         });
     }
