@@ -13,7 +13,6 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) {
         stage.setTitle("Comparison v1.0");
-
         stage.setResizable(false);
         stage.setScene(new Scene(rootNode, 563, 480));
         stage.getIcons().add(new Image(getClass().getResourceAsStream("../icons/ic_launcher.png")));

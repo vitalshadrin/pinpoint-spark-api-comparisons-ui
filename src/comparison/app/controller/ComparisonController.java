@@ -54,7 +54,7 @@ public class ComparisonController extends ControllerHelper implements Initializa
                 validator.validate(browseFirst, labelFirstStore, dictionary.getProperties().getProperty("browseFirstError")) &
                         validator.validate(browseSecond, labelSecondStore, dictionary.getProperties().getProperty("browseSecondError")) &
                         validator.validate(browseComparePath, labelCompareStore, dictionary.getProperties().getProperty("browseComparePathError"));
-        if (readyStatus && alerts.informationAlert(dictionary.getProperties().getProperty("compareInformationAlert"))) {
+        if (readyStatus && alerts.confirmationAlert(dictionary.getProperties().getProperty("compareInformationAlert"))) {
             executor((System.getProperty("os.name").equals("Linux") ? "gnome-terminal -- " : "cmd /c start compare.cmd ") +
                     browseFirst.getText() + " " +
                     browseSecond.getText() + " " +
