@@ -32,7 +32,7 @@
             <menus>
                 <Menu mnemonicParsing="false" text="Settings">
                     <items>
-                        <MenuItem fx:id="generalSettings1" mnemonicParsing="false" onAction="#general" text="General settings" />
+                        <MenuItem fx:id="generalSettings" mnemonicParsing="false" onAction="#general" text="General settings" />
                     </items>
                     <items>
                         <MenuItem mnemonicParsing="false" text="Settings path" />
@@ -40,7 +40,7 @@
                 </Menu>
                 <Menu mnemonicParsing="false" text="Help">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="About" />
+                        <MenuItem mnemonicParsing="false" onAction="#about" text="About" />
                     </items>
                 </Menu>
             </menus>

@@ -14,11 +14,22 @@ public class Alerts {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "", continueBtn, stopButton);
         Window window = alert.getDialogPane().getScene().getWindow();
         window.setOnCloseRequest(e -> alert.hide());
-        alert.setTitle("Information Dialog");
+        alert.setTitle("Confirmation Dialog");
         alert.setHeaderText(null);
         alert.setContentText(text);
         ((Stage) alert.getDialogPane().getScene().getWindow()).getIcons().add(new Image("./comparison/icons/ic_launcher.png"));
         alert.showAndWait();
         return alert.getResult() == null ? false : alert.getResult().equals(continueBtn);
+    }
+
+    public void informationAlert() {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION, "");
+        Window window = alert.getDialogPane().getScene().getWindow();
+        window.setOnCloseRequest(e -> alert.hide());
+        alert.setTitle("Information Dialog");
+        alert.setHeaderText(null);
+        alert.setContentText("Application version: 1.0 \nDesign by Vitali Shadrin");
+        ((Stage) alert.getDialogPane().getScene().getWindow()).getIcons().add(new Image("./comparison/icons/ic_launcher.png"));
+        alert.showAndWait();
     }
 }

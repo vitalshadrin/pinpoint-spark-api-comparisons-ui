@@ -14,11 +14,11 @@
             <children>
                 <Button fx:id="browseStore" layoutX="477.0" layoutY="126.0" mnemonicParsing="false" onAction="#browseStoreEndpoint" text="Browse">
                <font>
-                  <Font name="System Bold" size="13.0" />
+                  <Font name="Arial Bold" size="14.0" />
                </font></Button>
                 <Button layoutX="30.0" layoutY="187.0" mnemonicParsing="false" onAction="#generate" prefHeight="30.0" prefWidth="90.0" text="Generate">
                <font>
-                  <Font name="System Bold" size="13.0" />
+                  <Font name="Arial Bold" size="14.0" />
                </font></Button>
                 <TextField fx:id="endpointStorePath" layoutX="30.0" layoutY="126.0" prefHeight="29.0" prefWidth="435.0" promptText="Select directory ....">
                     <tooltip>
@@ -28,14 +28,17 @@
                             </font>
                         </Tooltip>
                     </tooltip>
-                </TextField>
-                <Label layoutX="31.0" layoutY="105.0" text="Path to save generated API dumps:">
                <font>
-                  <Font name="System Bold" size="13.0" />
+                  <Font size="14.0" />
+               </font>
+                </TextField>
+                <Label layoutX="31.0" layoutY="106.0" text="Path to save generated API dumps:">
+               <font>
+                  <Font name="Arial" size="15.0" />
                </font></Label>
                 <Label layoutX="31.0" layoutY="30.0" text="URL of testing endpoint:">
                <font>
-                  <Font name="System Bold" size="13.0" />
+                  <Font name="Arial" size="15.0" />
                </font></Label>
                 <TextField fx:id="url" layoutX="30.0" layoutY="49.0" prefHeight="29.0" prefWidth="434.0" promptText="URL...">
                     <tooltip>
@@ -45,9 +48,18 @@
                             </font>
                         </Tooltip>
                     </tooltip>
+               <font>
+                  <Font size="14.0" />
+               </font>
                 </TextField>
-                <Label fx:id="urlLabel" layoutX="30.0" layoutY="76.0" textFill="RED" />
-                <Label fx:id="labelGenerateStore" layoutX="30.0" layoutY="154.0" textFill="RED" />
+                <Label fx:id="urlLabel" layoutX="30.0" layoutY="80.0" textFill="RED">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font></Label>
+                <Label fx:id="labelGenerateStore" layoutX="30.0" layoutY="157.0" textFill="RED">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font></Label>
             </children>
         </AnchorPane>
 

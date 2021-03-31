@@ -1,5 +1,6 @@
 package comparison.app.controller;
 
+import comparison.app.components.StageBuilder;
 import javafx.fxml.FXML;
 import javafx.scene.control.MenuItem;
 
@@ -19,8 +20,18 @@ public class MainController extends ControllerHelper {
     private MenuItem generalSettings;
 
     @FXML
-    public void general(){
-
+    public void general() {
+        new StageBuilder.Builder()
+                .withFxmlPath("../../fxml/general.fxml")
+                .withIconPath("../../icons/ic_launcher.png")
+                .withTitle("General settings")
+                .withWeight(585)
+                .withHeight(314)
+                .getStage();
     }
 
+    @FXML
+    public void about() {
+        alerts.informationAlert();
+    }
 }
