@@ -32,4 +32,15 @@ public class Alerts {
         ((Stage) alert.getDialogPane().getScene().getWindow()).getIcons().add(new Image("./comparison/icons/ic_launcher.png"));
         alert.showAndWait();
     }
+
+    public void errorAlert(String errorText) {
+        Alert alert = new Alert(Alert.AlertType.ERROR, "");
+        Window window = alert.getDialogPane().getScene().getWindow();
+        window.setOnCloseRequest(e -> alert.hide());
+        alert.setTitle("Error Dialog");
+        alert.setHeaderText(null);
+        alert.setContentText(errorText);
+        ((Stage) alert.getDialogPane().getScene().getWindow()).getIcons().add(new Image("./comparison/icons/ic_launcher.png"));
+        alert.showAndWait();
+    }
 }

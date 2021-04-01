@@ -1,7 +1,5 @@
 package comparison.app.controller;
 
-import comparison.app.property.PropertiesReader;
-import comparison.app.property.PropertyPath;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;

@@ -1,47 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
-
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="314.0" prefWidth="584.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <Button layoutX="38.0" layoutY="245.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" text="Save">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Button>
-      <Button layoutX="477.0" layoutY="245.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" text="Cancel">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Button>
-      <TextField layoutX="38.0" layoutY="44.0" prefHeight="25.0" prefWidth="506.0" />
-      <TextField layoutX="38.0" layoutY="95.0" prefHeight="25.0" prefWidth="506.0" />
-      <TextField layoutX="38.0" layoutY="148.0" prefHeight="25.0" prefWidth="506.0" />
-      <Label layoutX="38.0" layoutY="22.0" text="all">
-         <font>
-            <Font name="System Bold" size="16.0" />
-         </font>
-      </Label>
-      <Label layoutX="38.0" layoutY="73.0" text="bau">
-         <font>
-            <Font name="System Bold" size="16.0" />
-         </font>
-      </Label>
-      <TextField layoutX="38.0" layoutY="200.0" prefHeight="25.0" prefWidth="506.0" />
-      <Label layoutX="38.0" layoutY="126.0" text="features">
-         <font>
-            <Font name="System Bold" size="16.0" />
-         </font>
-      </Label>
-      <Label layoutX="38.0" layoutY="178.0" text="metadata">
-         <font>
-            <Font name="System Bold" size="16.0" />
-         </font>
-      </Label>
-   </children>
+<?import javafx.scene.text.*?>
+<AnchorPane fx:id="generalPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="314.0" prefWidth="584.0" xmlns="http://javafx.com/javafx/15.0.1"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="comparison.app.controller.GeneralSettingsController">
+    <children>
+        <Button layoutX="39.0" layoutY="253.0" mnemonicParsing="false" onAction="#clickGeneralSave" prefHeight="30.0"
+                prefWidth="70.0" text="Save">
+            <font>
+                <Font name="Arial Bold" size="14.0"/>
+            </font>
+        </Button>
+        <Button fx:id="generalCancel" layoutX="474.0" layoutY="253.0" mnemonicParsing="false"
+                onAction="#clickGeneralCancel" prefHeight="30.0" prefWidth="70.0" text="Cancel">
+            <font>
+                <Font name="System Bold" size="14.0"/>
+            </font>
+        </Button>
+        <TextField fx:id="all" layoutX="38.0" layoutY="42.0" prefHeight="25.0" prefWidth="506.0">
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </TextField>
+        <TextField fx:id="bau" layoutX="38.0" layoutY="95.0" prefHeight="25.0" prefWidth="506.0">
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </TextField>
+        <TextField fx:id="features" layoutX="38.0" layoutY="150.0" prefHeight="25.0" prefWidth="506.0">
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </TextField>
+        <Label layoutX="38.0" layoutY="20.0" text="all">
+            <font>
+                <Font name="System Bold" size="16.0"/>
+            </font>
+        </Label>
+        <Label layoutX="38.0" layoutY="73.0" text="bau">
+            <font>
+                <Font name="System Bold" size="16.0"/>
+            </font>
+        </Label>
+        <TextField fx:id="metadata" layoutX="38.0" layoutY="207.0" prefHeight="25.0" prefWidth="506.0">
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </TextField>
+        <Label layoutX="38.0" layoutY="128.0" text="features">
+            <font>
+                <Font name="System Bold" size="16.0"/>
+            </font>
+        </Label>
+        <Label layoutX="38.0" layoutY="185.0" text="metadata">
+            <font>
+                <Font name="Arial Bold" size="16.0"/>
+            </font>
+        </Label>
+    </children>
 </AnchorPane>

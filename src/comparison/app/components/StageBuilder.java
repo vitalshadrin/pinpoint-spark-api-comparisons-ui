@@ -22,48 +22,51 @@ public class StageBuilder {
             newStageBuilder = new StageBuilder();
         }
 
-        public Builder withFxmlPath(String fxmlPath){
+        public Builder withFxmlPath(String fxmlPath) {
             newStageBuilder.fxmlPath = fxmlPath;
             return this;
         }
 
-        public Builder withIconPath(String iconPath){
+        public Builder withIconPath(String iconPath) {
             newStageBuilder.iconPath = iconPath;
             return this;
         }
 
-        public Builder withTitle(String title){
+        public Builder withTitle(String title) {
             newStageBuilder.title = title;
             return this;
         }
 
-        public Builder withHeight(Integer height){
+        public Builder withHeight(Integer height) {
             newStageBuilder.height = height;
             return this;
         }
 
-        public Builder withWeight(Integer weight){
+        public Builder withWeight(Integer weight) {
             newStageBuilder.weight = weight;
             return this;
         }
 
-        public StageBuilder build(){
+        public StageBuilder build() {
             return newStageBuilder;
         }
 
-        public void getStage(){
+        public Stage getStage() {
             Parent root;
+            Stage newStage = null;
             try {
                 root = FXMLLoader.load(getClass().getResource(newStageBuilder.fxmlPath));
-                Stage stage = new Stage();
-                stage.setTitle(newStageBuilder.title);
-                stage.setResizable(false);
-                stage.setScene(new Scene(root, newStageBuilder.weight, newStageBuilder.height));
-                stage.getIcons().add(new Image(getClass().getResourceAsStream(newStageBuilder.iconPath)));
-                stage.show();
+                newStage = new Stage();
+                newStage.setTitle(newStageBuilder.title);
+                newStage.setResizable(false);
+                newStage.setScene(new Scene(root, newStageBuilder.weight, newStageBuilder.height));
+                newStage.getIcons().add(new Image(getClass().getResourceAsStream(newStageBuilder.iconPath)));
+                newStage.show();
+                return newStage;
             } catch (IOException e) {
                 e.printStackTrace();
             }
+            return null;
         }
     }
 }
