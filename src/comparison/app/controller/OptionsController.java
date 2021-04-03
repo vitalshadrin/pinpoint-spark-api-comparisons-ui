@@ -94,8 +94,6 @@ public class OptionsController extends ControllerHelper {
     @FXML
     TextField metricsGroupKey;
     @FXML
-    TitledPane tapi;
-    @FXML
     Button save;
 
     @FXML
@@ -119,18 +117,22 @@ public class OptionsController extends ControllerHelper {
     }
 
     private void setOption() {
-        setOptionsFields(
-                Arrays.asList(t_api, t_demographics, t_media, t_periods, t_universes, t_subuniverses, t_crossperiods, t_build,
-                        t_threads, t_threshold, t_minimumfraction, t_tolerance, t_kpitype, t_plannerUrl, t_resorceApi, t_ifupdiff,
-                        t_thresholdUpdiff, t_skippedreportsUpdiff, t_cache, t_metricsGroupKey),
-                Arrays.asList(api, demographics, media, periods, universes, subuniverses, crossperiods, build, threads, threshold,
-                        minimumfraction, tolerance, kpitype, plannerUrl, resorceApi, ifupdiff, thresholdUpdiff, skippedreportsUpdiff, cache, metricsGroupKey)
-        );
-        optionsFields.forEach((titledPane, textField) -> {
-            titledPane.setText(titledPane.getAccessibleHelp() + " (" + options.getProperties().getProperty(titledPane.getAccessibleHelp()) + ")");
-            titledPane.setFont(Font.font(null, FontWeight.BOLD, 12));
-            textField.setText(options.getProperties().getProperty(textField.getAccessibleHelp()));
-        });
+        try {
+            setOptionsFields(
+                    Arrays.asList(t_api, t_demographics, t_media, t_periods, t_universes, t_subuniverses, t_crossperiods, t_build,
+                            t_threads, t_threshold, t_minimumfraction, t_tolerance, t_kpitype, t_plannerUrl, t_resorceApi, t_ifupdiff,
+                            t_thresholdUpdiff, t_skippedreportsUpdiff, t_cache, t_metricsGroupKey),
+                    Arrays.asList(api, demographics, media, periods, universes, subuniverses, crossperiods, build, threads, threshold,
+                            minimumfraction, tolerance, kpitype, plannerUrl, resorceApi, ifupdiff, thresholdUpdiff, skippedreportsUpdiff, cache, metricsGroupKey)
+            );
+            optionsFields.forEach((titledPane, textField) -> {
+                titledPane.setText(titledPane.getAccessibleHelp() + " (" + options.getProperties().getProperty(titledPane.getAccessibleHelp()) + ")");
+                titledPane.setFont(Font.font(null, FontWeight.BOLD, 12));
+                textField.setText(options.getProperties().getProperty(textField.getAccessibleHelp()));
+            });
+        } catch (Exception e) {
+            optionsFieldsErrorsStatus = true;
+        }
     }
 }
 

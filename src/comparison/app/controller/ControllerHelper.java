@@ -28,6 +28,7 @@ public class ControllerHelper {
     PropertiesReader options = new PropertiesReader(PropertyPath.OPTIONS);
     PropertiesReader general = new PropertiesReader(PropertyPath.GENERAL);
     Map<TitledPane, TextField> optionsFields = new HashMap<>();
+    public static Boolean optionsFieldsErrorsStatus = false;
 
     public void updateOptions() {
         this.options = new PropertiesReader(PropertyPath.OPTIONS);

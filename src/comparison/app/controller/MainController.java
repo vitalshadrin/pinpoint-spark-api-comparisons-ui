@@ -31,6 +31,17 @@ public class MainController extends ControllerHelper {
     }
 
     @FXML
+    public void settings() {
+        new StageBuilder.Builder()
+                .withFxmlPath("../../fxml/setting.fxml")
+                .withIconPath("../../icons/ic_launcher.png")
+                .withTitle("Path settings")
+                .withWeight(585)
+                .withHeight(314)
+                .getStage();
+    }
+
+    @FXML
     public void about() {
         alerts.informationAlert();
     }

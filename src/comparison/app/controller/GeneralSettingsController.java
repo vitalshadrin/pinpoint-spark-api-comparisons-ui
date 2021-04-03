@@ -52,7 +52,7 @@ public class GeneralSettingsController extends ControllerHelper {
             features.setText(general.getProperties().getProperty("features"));
             metadata.setText(general.getProperties().getProperty("metadata"));
         } catch (Exception ex) {
-            alerts.errorAlert("Please check config path");
+            alerts.errorAlert("Please check general config path.");
             final Stage stage = (Stage) generalPane.getScene().getWindow();
             stage.close();
         }
