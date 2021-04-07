@@ -11,11 +11,15 @@ import java.util.stream.Collectors;
 
 public class PropertiesReader  {
     private final Properties properties;
-    private final PropertyPath propertyPath;
+    private PropertyPath propertyPath;
 
     public PropertiesReader(PropertyPath propertyPath) {
         this.propertyPath = propertyPath;
         this.properties = getProperty(propertyPath.getPropertyPath());
+    }
+
+    public PropertiesReader(String propertyPath) {
+        this.properties = getProperty(propertyPath);
     }
 
     private Properties getProperty(String propertyName) {

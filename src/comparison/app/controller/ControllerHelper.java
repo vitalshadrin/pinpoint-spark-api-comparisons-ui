@@ -30,6 +30,7 @@ public class ControllerHelper {
     Map<TitledPane, TextField> optionsFields = new HashMap<>();
     public static Boolean optionsFieldsErrorsStatus = false;
 
+
     public void updateOptions() {
         this.options = new PropertiesReader(PropertyPath.OPTIONS);
     }

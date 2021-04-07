@@ -1,6 +1,8 @@
 package comparison.app;
 
 import comparison.app.components.Alerts;
+import comparison.app.property.PropertiesReader;
+import comparison.app.property.PropertyPath;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -21,7 +23,7 @@ public class Main extends Application {
         stage.getIcons().add(new Image(getClass().getResourceAsStream("../icons/ic_launcher.png")));
         stage.show();
         if (optionsFieldsErrorsStatus)
-            new Alerts().errorAlert("Please check test options config path.");
+            new Alerts().errorAlert( new PropertiesReader(PropertyPath.GENERAL).getProperties().getProperty("errorCheckTestOption"));
     }
 
     @Override

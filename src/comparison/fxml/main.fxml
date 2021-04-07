@@ -35,7 +35,7 @@
                         <MenuItem fx:id="generalSettings" mnemonicParsing="false" onAction="#general" text="General settings" />
                     </items>
                     <items>
-                        <MenuItem mnemonicParsing="false" text="Settings path"  onAction="#settings" />
+                        <MenuItem visible="false" mnemonicParsing="false" text="Settings path"  onAction="#settings" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Help">

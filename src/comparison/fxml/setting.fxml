@@ -6,47 +6,46 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane fx:controller="comparison.app.controller.SettingController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="335.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="anchorId" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="225.0" prefWidth="449.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="comparison.app.controller.SettingController">
    <children>
-      <Label layoutX="99.0" layoutY="79.0" text="General setting path">
+      <Label layoutX="31.0" layoutY="25.0" text="General setting path">
          <font>
-            <Font name="Arial" size="14.0" />
+            <Font name="Arial" size="15.0" />
          </font>
       </Label>
-      <Button layoutX="99.0" layoutY="200.0" mnemonicParsing="false" text="Save">
+      <Button fx:id="save" layoutX="31.0" layoutY="148.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" text="Save">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Button>
-      <Button layoutX="211.0" layoutY="200.0" mnemonicParsing="false" text="Close">
+      <Button onAction="#clickCancel" fx:id="cancel" layoutX="145.0" layoutY="148.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="70.0" text="Cancel">
          <font>
-            <Font name="Arial" size="14.0" />
+            <Font name="Arial Bold" size="14.0" />
          </font>
       </Button>
-      <TextField layoutX="99.0" layoutY="96.0" prefHeight="25.0" prefWidth="280.0">
+      <TextField fx:id="generalText" layoutX="31.0" layoutY="44.0" prefHeight="25.0" prefWidth="280.0">
          <font>
             <Font size="14.0" />
          </font>
       </TextField>
-      <TextField layoutX="99.0" layoutY="156.0" prefHeight="25.0" prefWidth="280.0">
+      <TextField fx:id="testOptionsText" layoutX="31.0" layoutY="104.0" prefHeight="25.0" prefWidth="280.0">
          <font>
             <Font size="14.0" />
          </font>
       </TextField>
-      <Button layoutX="394.0" layoutY="96.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="77.0" text="Browse">
+      <Button onAction="#browseGeneralSettings" fx:id="generalBrowse" layoutX="326.0" layoutY="44.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="77.0" text="Browse">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Button>
-      <Button layoutX="394.0" layoutY="156.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="77.0" text="Browse">
+      <Button onAction="#browseTestOption" fx:id="testOptionBrowse" layoutX="326.0" layoutY="104.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="77.0" text="Browse">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Button>
-      <Label layoutX="99.0" layoutY="140.0" text="Test option config path">
+      <Label layoutX="31.0" layoutY="86.0" text="Test option config path">
          <font>
-            <Font name="Arial" size="14.0" />
+            <Font name="Arial" size="15.0" />
          </font>
       </Label>
    </children>

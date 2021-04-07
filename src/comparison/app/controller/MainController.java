@@ -36,8 +36,8 @@ public class MainController extends ControllerHelper {
                 .withFxmlPath("../../fxml/setting.fxml")
                 .withIconPath("../../icons/ic_launcher.png")
                 .withTitle("Path settings")
-                .withWeight(585)
-                .withHeight(314)
+                .withWeight(437)
+                .withHeight(214)
                 .getStage();
     }
 
