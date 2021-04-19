@@ -29,7 +29,7 @@ public class ControllerHelper {
     PropertiesReader general = new PropertiesReader(PropertyPath.GENERAL);
     Map<TitledPane, TextField> optionsFields = new HashMap<>();
     public static Boolean optionsFieldsErrorsStatus = false;
-    private String folderPath = "";
+    private static String folderPath = "";
 
 
     public void updateOptions() {
