@@ -29,6 +29,7 @@ public class ControllerHelper {
     PropertiesReader general = new PropertiesReader(PropertyPath.GENERAL);
     Map<TitledPane, TextField> optionsFields = new HashMap<>();
     public static Boolean optionsFieldsErrorsStatus = false;
+    private String folderPath = "";
 
 
     public void updateOptions() {
@@ -57,8 +58,10 @@ public class ControllerHelper {
     public void browseEndpoint(AnchorPane anchorId, TextField textField) {
         final DirectoryChooser directoryChooser = new DirectoryChooser();
         Stage stage = (Stage) anchorId.getScene().getWindow();
+        if (!folderPath.isEmpty()) directoryChooser.setInitialDirectory(new File(this.folderPath));
         File file = directoryChooser.showDialog(stage);
         if (file != null) {
+            this.folderPath = String.valueOf(file.getAbsoluteFile());
             textField.setText(String.valueOf(file.getAbsoluteFile()));
         }
     }
