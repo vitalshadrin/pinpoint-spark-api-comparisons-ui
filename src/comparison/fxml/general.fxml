@@ -8,13 +8,13 @@
             xmlns:fx="http://javafx.com/fxml/1" fx:controller="comparison.app.controller.GeneralSettingsController">
     <children>
         <Button layoutX="39.0" layoutY="253.0" mnemonicParsing="false" onAction="#clickGeneralSave" prefHeight="30.0"
-                prefWidth="70.0" text="Save">
+                prefWidth="80.0" text="Save">
             <font>
                 <Font name="Arial Bold" size="14.0"/>
             </font>
         </Button>
-        <Button fx:id="generalCancel" layoutX="474.0" layoutY="253.0" mnemonicParsing="false"
-                onAction="#clickGeneralCancel" prefHeight="30.0" prefWidth="70.0" text="Cancel">
+        <Button fx:id="generalCancel" layoutX="464.0" layoutY="253.0" mnemonicParsing="false"
+                onAction="#clickGeneralCancel" prefHeight="30.0" prefWidth="80.0" text="Cancel">
             <font>
                 <Font name="System Bold" size="14.0"/>
             </font>

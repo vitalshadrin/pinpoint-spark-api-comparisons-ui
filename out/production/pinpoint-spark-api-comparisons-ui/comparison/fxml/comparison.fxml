@@ -77,17 +77,17 @@
                </font></Label>
             </children>
         </AnchorPane>
-          <Button fx:id="browseFirstEndpoint" layoutX="477.0" layoutY="53.0" mnemonicParsing="false" onAction="#browseFirstEndpoint" text="Browse">
+          <Button fx:id="browseFirstEndpoint" layoutX="477.0" layoutY="53.0" prefHeight="29.0" mnemonicParsing="false" onAction="#browseFirstEndpoint" text="Browse">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Button>
-          <Button fx:id="browseSecondEndpoint" layoutX="477.0" layoutY="120.0" mnemonicParsing="false" onAction="#browseSecondEndpoint" text="Browse">
+          <Button fx:id="browseSecondEndpoint" layoutX="477.0" layoutY="120.0" prefHeight="29.0"  mnemonicParsing="false" onAction="#browseSecondEndpoint" text="Browse">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Button>
-          <Button fx:id="browseSecondCompare" layoutX="477.0" layoutY="189.0" mnemonicParsing="false" onAction="#browseComparePath" text="Browse">
+          <Button fx:id="browseSecondCompare" layoutX="477.0" layoutY="189.0" prefHeight="29.0" mnemonicParsing="false" onAction="#browseComparePath" text="Browse">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>

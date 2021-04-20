@@ -36,6 +36,7 @@ public class GeneralSettingsController extends ControllerHelper {
         newSettings.put("features", features.getText());
         newSettings.put("metadata", metadata.getText());
         general.saveProperty(newSettings);
+        alerts.informationAlert("General settings updated successfully.");
     }
 
     @FXML
@@ -52,7 +53,7 @@ public class GeneralSettingsController extends ControllerHelper {
             features.setText(general.getProperties().getProperty("features"));
             metadata.setText(general.getProperties().getProperty("metadata"));
         } catch (Exception ex) {
-            alerts.errorAlert(dictionary.getProperties().getProperty("errorCheckGeneralConfig"));
+            alerts.errorAlert("Please check general config path.");
             final Stage stage = (Stage) generalPane.getScene().getWindow();
             stage.close();
         }

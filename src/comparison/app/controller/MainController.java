@@ -22,8 +22,8 @@ public class MainController extends ControllerHelper {
     @FXML
     public void general() {
         new StageBuilder.Builder()
-                .withFxmlPath("../../fxml/general.fxml")
-                .withIconPath("../../icons/ic_launcher.png")
+                .withFxmlPath("/comparison/fxml/general.fxml")
+                .withIconPath("/comparison/icons/ic_launcher.png")
                 .withTitle("General settings")
                 .withWeight(585)
                 .withHeight(314)
@@ -33,8 +33,8 @@ public class MainController extends ControllerHelper {
     @FXML
     public void settings() {
         new StageBuilder.Builder()
-                .withFxmlPath("../../fxml/setting.fxml")
-                .withIconPath("../../icons/ic_launcher.png")
+                .withFxmlPath("/comparison/fxml/setting.fxml")
+                .withIconPath("/comparison/icons/ic_launcher.png")
                 .withTitle("Path settings")
                 .withWeight(437)
                 .withHeight(214)
@@ -43,6 +43,6 @@ public class MainController extends ControllerHelper {
 
     @FXML
     public void about() {
-        alerts.informationAlert();
+        alerts.informationAlert("Application version: 1.0.1 \nFor detailed information please contact: \n* vitali.shadrin.consultant@nielsen.com \n* nina.x.rybchak.consultant@nielsen.com");
     }
 }

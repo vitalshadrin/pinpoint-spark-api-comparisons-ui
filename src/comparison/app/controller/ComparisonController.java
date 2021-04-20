@@ -51,11 +51,11 @@ public class ComparisonController extends ControllerHelper implements Initializa
     @FXML
     private void compare() {
         boolean readyStatus =
-                validator.validate(browseFirst, labelFirstStore, dictionary.getProperties().getProperty("browseFirstError")) &
-                        validator.validate(browseSecond, labelSecondStore, dictionary.getProperties().getProperty("browseSecondError")) &
-                        validator.validate(browseComparePath, labelCompareStore, dictionary.getProperties().getProperty("browseComparePathError"));
-        if (readyStatus && alerts.confirmationAlert(dictionary.getProperties().getProperty("compareInformationAlert"))) {
-            executor((System.getProperty("os.name").equals("Linux") ? "gnome-terminal -- " : "cmd /c start compare.cmd ") +
+                validator.validate(browseFirst, labelFirstStore, "Please fill 1st stored path.") &
+                        validator.validate(browseSecond, labelSecondStore, "Please fill 2st stored path.") &
+                        validator.validate(browseComparePath, labelCompareStore, "Please fill compare results store path.");
+        if (readyStatus && alerts.confirmationAlert("Are you sure you want to continue the comparison?")) {
+            executor((System.getProperty("os.name").equals("Linux") ? "gnome-terminal -- " : "cmd /c start compare-ui.cmd ") +
                     browseFirst.getText() + " " +
                     browseSecond.getText() + " " +
                     browseComparePath.getText());

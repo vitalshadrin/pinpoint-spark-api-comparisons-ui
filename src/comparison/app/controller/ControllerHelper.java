@@ -24,7 +24,6 @@ import java.util.stream.Collectors;
 public class ControllerHelper {
     Validator validator = new Validator();
     Alerts alerts = new Alerts();
-    PropertiesReader dictionary = new PropertiesReader(PropertyPath.DICTIONARY);
     PropertiesReader options = new PropertiesReader(PropertyPath.OPTIONS);
     PropertiesReader general = new PropertiesReader(PropertyPath.GENERAL);
     Map<TitledPane, TextField> optionsFields = new HashMap<>();

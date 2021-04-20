@@ -1,7 +1,5 @@
 package comparison.app.property;
 
-import comparison.app.controller.ControllerHelper;
-
 import java.io.*;
 import java.util.Arrays;
 import java.util.List;
@@ -9,7 +7,7 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.stream.Collectors;
 
-public class PropertiesReader  {
+public class PropertiesReader {
     private final Properties properties;
     private PropertyPath propertyPath;
 

@@ -1,8 +1,6 @@
 package comparison.app;
 
 import comparison.app.components.Alerts;
-import comparison.app.property.PropertiesReader;
-import comparison.app.property.PropertyPath;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -17,18 +15,18 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) {
-        stage.setTitle("Comparison v1.0");
+        stage.setTitle("Comparison v1.0.1");
         stage.setResizable(false);
         stage.setScene(new Scene(rootNode, 563, 480));
-        stage.getIcons().add(new Image(getClass().getResourceAsStream("../icons/ic_launcher.png")));
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("/comparison/icons/ic_launcher.png")));
         stage.show();
         if (optionsFieldsErrorsStatus)
-            new Alerts().errorAlert( new PropertiesReader(PropertyPath.GENERAL).getProperties().getProperty("errorCheckTestOption"));
+            new Alerts().errorAlert("Please check test options config path.");
     }
 
     @Override
     public void init() throws Exception {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../fxml/main.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/comparison/fxml/main.fxml"));
         rootNode = fxmlLoader.load();
     }
 

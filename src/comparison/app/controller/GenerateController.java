@@ -35,10 +35,10 @@ public class GenerateController extends ControllerHelper implements Initializabl
     @FXML
     private void generate() {
         boolean readyStatus =
-                validator.validate(url, urlLabel,  dictionary.getProperties().getProperty("urlError")) &
-                        validator.validate(endpointStorePath, labelGenerateStore, dictionary.getProperties().getProperty("endpointStorePathError"));
-        if (readyStatus && alerts.confirmationAlert( dictionary.getProperties().getProperty("generateInformationAlert"))) {
-            executor((System.getProperty("os.name").equals("Linux") ? "gnome-terminal -- " : "cmd /c start generate1.cmd ")
+                validator.validate(url, urlLabel, "Please fill URL.") &
+                        validator.validate(endpointStorePath, labelGenerateStore, "Please fill endpoint store path.");
+        if (readyStatus && alerts.confirmationAlert("Are you sure you want to continue creating new Endpoint data?")) {
+            executor((System.getProperty("os.name").equals("Linux") ? "gnome-terminal -- " : "cmd /c start generate-ui.cmd ")
                     + url.getText() + " "
                     + endpointStorePath.getText());
         }

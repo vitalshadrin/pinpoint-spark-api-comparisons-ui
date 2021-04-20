@@ -12,7 +12,7 @@
 
         <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="526.0" prefWidth="508.0">
             <children>
-                <Button fx:id="browseStore" layoutX="477.0" layoutY="126.0" mnemonicParsing="false" onAction="#browseStoreEndpoint" text="Browse">
+                <Button fx:id="browseStore" layoutX="477.0" layoutY="126.0" mnemonicParsing="false" prefHeight="29.0" onAction="#browseStoreEndpoint" text="Browse">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font></Button>

@@ -1,7 +1,7 @@
 package comparison.app.property;
 
 public enum PropertyPath {
-    DICTIONARY("src/comparison/resources/appText.properties"),
+    DICTIONARY("/comparison/resources/appText.properties"),
     OPTIONS("Config Files/testOptions.properties"),
     GENERAL("Config Files/General/test_groups.properties");
 
