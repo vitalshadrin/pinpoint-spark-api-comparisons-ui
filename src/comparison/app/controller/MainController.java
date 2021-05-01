@@ -43,6 +43,6 @@ public class MainController extends ControllerHelper {
 
     @FXML
     public void about() {
-        alerts.informationAlert("Application version: 1.0.1 \nFor detailed information please contact: \n* vitali.shadrin.consultant@nielsen.com \n* nina.x.rybchak.consultant@nielsen.com");
+        alerts.informationAlert("Application version: 1.0.2 \nFor detailed information please contact: \n* vitali.shadrin.consultant@nielsen.com \n* nina.x.rybchak.consultant@nielsen.com");
     }
 }
