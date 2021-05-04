@@ -102,8 +102,12 @@ public class OptionsController extends ControllerHelper {
         optionsFields.values().forEach(textField -> fields.put(textField.getAccessibleHelp(), textField.getText()));
         options.saveProperty(fields);
         updateOptions();
-        optionsFields.keySet().forEach(titledPane ->
-                titledPane.setText(titledPane.getAccessibleHelp() + " (" + options.getProperties().getProperty(titledPane.getAccessibleHelp()) + ")"));
+        optionsFields.keySet().forEach(titledPane -> {
+            String value = options.getProperties().getProperty(titledPane.getAccessibleHelp());
+            titledPane.setText(titledPane.getAccessibleHelp() +
+                    " (" + (value.length() < 110 ? value : value.substring(0, 110) + "...") + ")");
+        });
+
     }
 
     @FXML
@@ -126,7 +130,9 @@ public class OptionsController extends ControllerHelper {
                             minimumfraction, tolerance, kpitype, plannerUrl, resorceApi, ifupdiff, thresholdUpdiff, skippedreportsUpdiff, cache, metricsGroupKey)
             );
             optionsFields.forEach((titledPane, textField) -> {
-                titledPane.setText(titledPane.getAccessibleHelp() + " (" + options.getProperties().getProperty(titledPane.getAccessibleHelp()) + ")");
+                String titledPaneValue = options.getProperties().getProperty(titledPane.getAccessibleHelp());
+                titledPane.setText(titledPane.getAccessibleHelp() +
+                        " (" + (titledPaneValue.length() < 110 ? titledPaneValue : titledPaneValue.substring(0, 110) + "...") + ")");
                 titledPane.setFont(Font.font(null, FontWeight.BOLD, 12));
                 textField.setText(options.getProperties().getProperty(textField.getAccessibleHelp()));
             });
