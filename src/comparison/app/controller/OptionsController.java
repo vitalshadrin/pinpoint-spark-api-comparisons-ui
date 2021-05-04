@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TitledPane;
+import javafx.scene.control.Tooltip;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 
@@ -13,6 +14,7 @@ import java.util.Map;
 
 
 public class OptionsController extends ControllerHelper {
+    private final int MAX_LENGTH = 110;
     @FXML
     TitledPane t_api;
     @FXML
@@ -105,7 +107,7 @@ public class OptionsController extends ControllerHelper {
         optionsFields.keySet().forEach(titledPane -> {
             String value = options.getProperties().getProperty(titledPane.getAccessibleHelp());
             titledPane.setText(titledPane.getAccessibleHelp() +
-                    " (" + (value.length() < 110 ? value : value.substring(0, 110) + "...") + ")");
+                    " (" + (value.length() < MAX_LENGTH ? value : value.substring(0, MAX_LENGTH) + "...") + ")");
         });
 
     }
@@ -132,7 +134,11 @@ public class OptionsController extends ControllerHelper {
             optionsFields.forEach((titledPane, textField) -> {
                 String titledPaneValue = options.getProperties().getProperty(titledPane.getAccessibleHelp());
                 titledPane.setText(titledPane.getAccessibleHelp() +
-                        " (" + (titledPaneValue.length() < 110 ? titledPaneValue : titledPaneValue.substring(0, 110) + "...") + ")");
+                        " (" + (titledPaneValue.length() < MAX_LENGTH ? titledPaneValue : titledPaneValue.substring(0, MAX_LENGTH) + "...") + ")");
+                if (titledPaneValue.length() < 10) {
+                    titledPane.setTooltip(new Tooltip(titledPaneValue));
+                }
+
                 titledPane.setFont(Font.font(null, FontWeight.BOLD, 12));
                 textField.setText(options.getProperties().getProperty(textField.getAccessibleHelp()));
             });
