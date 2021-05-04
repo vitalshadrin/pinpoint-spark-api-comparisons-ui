@@ -4,20 +4,19 @@
 <?import javafx.scene.effect.Blend?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<AnchorPane prefHeight="595.0" prefWidth="568.0" style="-fx-background-color: #ebebeb;"
+<AnchorPane prefHeight="595.0" prefWidth="563.0" style="-fx-background-color: #ebebeb;"
             xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="comparison.app.controller.OptionsController">
+            fx:controller="comparison.app.controller.OptionsController" >
 
-    <ScrollPane prefHeight="380.0" prefWidth="573.0">
+    <ScrollPane prefHeight="380.0" prefWidth="563.0">
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="532.0" prefWidth="0.0">
-
             <Accordion maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="500.0" prefWidth="557.0">
                 <panes>
                     <TitledPane fx:id="t_api" accessibleHelp="API">
-                        <AnchorPane prefHeight="12.0" prefWidth="557.0" minHeight="29"
+                        <AnchorPane prefHeight="12.0" prefWidth="545.0" minHeight="29"
                                     maxHeight="29">
                             <TextField fx:id="api" accessibleHelp="API" prefHeight="29.0"
-                                       prefWidth="557.0">
+                                       prefWidth="545.0">
                                 <font>
                                     <Font name="System Bold" size="13.0"/>
                                 </font>
