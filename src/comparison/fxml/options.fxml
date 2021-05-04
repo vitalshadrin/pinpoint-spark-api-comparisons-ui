@@ -10,13 +10,13 @@
 
     <ScrollPane prefHeight="380.0" prefWidth="563.0">
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="532.0" prefWidth="0.0">
-            <Accordion maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="500.0" prefWidth="557.0">
+            <Accordion maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="500.0" prefWidth="547.0">
                 <panes>
                     <TitledPane fx:id="t_api" accessibleHelp="API">
-                        <AnchorPane prefHeight="12.0" prefWidth="545.0" minHeight="29"
+                        <AnchorPane prefHeight="12.0" prefWidth="547.0" minHeight="29"
                                     maxHeight="29">
                             <TextField fx:id="api" accessibleHelp="API" prefHeight="29.0"
-                                       prefWidth="545.0">
+                                       prefWidth="547.0">
                                 <font>
                                     <Font name="System Bold" size="13.0"/>
                                 </font>
@@ -24,10 +24,10 @@
                         </AnchorPane>
                     </TitledPane>
                     <TitledPane fx:id="t_demographics" accessibleHelp="DEMOGRAPHICS">
-                        <AnchorPane prefHeight="12.0" prefWidth="557.0" minHeight="29" maxHeight="29">
+                        <AnchorPane prefHeight="12.0" prefWidth="547.0" minHeight="29" maxHeight="29">
                             <TextField fx:id="demographics" accessibleHelp="DEMOGRAPHICS"
                                        prefHeight="29.0"
-                                       prefWidth="557.0">
+                                       prefWidth="547.0">
                                 <font>
                                     <Font name="System Bold" size="13.0"/>
                                 </font>
@@ -38,10 +38,10 @@
                         </effect>
                     </TitledPane>
                     <TitledPane fx:id="t_media" accessibleHelp="MEDIA">
-                        <AnchorPane prefHeight="12.0" prefWidth="557.0" minHeight="29" maxHeight="29">
+                        <AnchorPane prefHeight="12.0" prefWidth="547.0" minHeight="29" maxHeight="29">
 
                             <TextField fx:id="media" accessibleHelp="MEDIA" prefHeight="29.0"
-                                       prefWidth="557.0">
+                                       prefWidth="547.0">
                                 <font>
                                     <Font name="System Bold" size="13.0"/>
                                 </font>
@@ -49,10 +49,10 @@
                         </AnchorPane>
                     </TitledPane>
                     <TitledPane fx:id="t_periods" accessibleHelp="PERIODS">
-                        <AnchorPane prefHeight="12.0" prefWidth="557.0" minHeight="29" maxHeight="29">
+                        <AnchorPane prefHeight="12.0" prefWidth="547.0" minHeight="29" maxHeight="29">
 
                             <TextField fx:id="periods" accessibleHelp="PERIODS" prefHeight="29.0"
-                                       prefWidth="557.0">
+                                       prefWidth="547.0">
                                 <font>
                                     <Font name="System Bold" size="13.0"/>
                                 </font>
@@ -61,11 +61,11 @@
                         </AnchorPane>
                     </TitledPane>
                     <TitledPane fx:id="t_universes" accessibleHelp="UNIVERSES">
-                        <AnchorPane prefHeight="12.0" prefWidth="557.0" minHeight="29" maxHeight="29">
+                        <AnchorPane prefHeight="12.0" prefWidth="547.0" minHeight="29" maxHeight="29">
 
                             <TextField fx:id="universes" accessibleHelp="UNIVERSES"
                                        prefHeight="29.0"
-                                       prefWidth="557.0">
+                                       prefWidth="547.0">
                                 <font>
                                     <Font name="System Bold" size="13.0"/>
                                 </font>
@@ -74,11 +74,11 @@
                         </AnchorPane>
                     </TitledPane>
                     <TitledPane fx:id="t_subuniverses" accessibleHelp="SUBUNIVERSES">
-                        <AnchorPane prefHeight="12.0" prefWidth="557.0" minHeight="29" maxHeight="29">
+                        <AnchorPane prefHeight="12.0" prefWidth="547.0" minHeight="29" maxHeight="29">
 
                             <TextField fx:id="subuniverses" accessibleHelp="SUBUNIVERSES"
                                        prefHeight="29.0"
-                                       prefWidth="557.0">
+                                       prefWidth="547.0">
                                 <font>
                                     <Font name="System Bold" size="13.0"/>
                                 </font>
@@ -87,11 +87,11 @@
                         </AnchorPane>
                     </TitledPane>
                     <TitledPane fx:id="t_crossperiods" accessibleHelp="CROSSPERIODS">
-                        <AnchorPane prefHeight="12.0" prefWidth="557.0" minHeight="29" maxHeight="29">
+                        <AnchorPane prefHeight="12.0" prefWidth="547.0" minHeight="29" maxHeight="29">
 
                             <TextField fx:id="crossperiods" accessibleHelp="CROSSPERIODS"
                                        prefHeight="29.0"
-                                       prefWidth="557.0">
+                                       prefWidth="547.0">
                                 <font>
                                     <Font name="System Bold" size="13.0"/>
                                 </font>
@@ -100,10 +100,10 @@
                         </AnchorPane>
                     </TitledPane>
                     <TitledPane fx:id="t_build" accessibleHelp="BUILD">
-                        <AnchorPane prefHeight="12.0" prefWidth="557.0" minHeight="29" maxHeight="29">
+                        <AnchorPane prefHeight="12.0" prefWidth="547.0" minHeight="29" maxHeight="29">
 
                             <TextField fx:id="build" accessibleHelp="BUILD" prefHeight="29.0"
-                                       prefWidth="557.0">
+                                       prefWidth="547.0">
                                 <font>
                                     <Font name="System Bold" size="13.0"/>
                                 </font>
@@ -112,10 +112,10 @@
                         </AnchorPane>
                     </TitledPane>
                     <TitledPane fx:id="t_threads" accessibleHelp="THREADS">
-                        <AnchorPane prefHeight="12.0" prefWidth="557.0" minHeight="29" maxHeight="29">
+                        <AnchorPane prefHeight="12.0" prefWidth="547.0" minHeight="29" maxHeight="29">
 
                             <TextField fx:id="threads" accessibleHelp="THREADS" prefHeight="29.0"
-                                       prefWidth="557.0">
+                                       prefWidth="547.0">
                                 <font>
                                     <Font name="System Bold" size="13.0"/>
                                 </font>
@@ -124,11 +124,11 @@
                         </AnchorPane>
                     </TitledPane>
                     <TitledPane fx:id="t_threshold" accessibleHelp="THRESHOLD">
-                        <AnchorPane prefHeight="12.0" prefWidth="557.0" minHeight="29" maxHeight="29">
+                        <AnchorPane prefHeight="12.0" prefWidth="547.0" minHeight="29" maxHeight="29">
 
                             <TextField fx:id="threshold" accessibleHelp="THRESHOLD"
                                        prefHeight="29.0"
-                                       prefWidth="557.0">
+                                       prefWidth="547.0">
                                 <font>
                                     <Font name="System Bold" size="13.0"/>
                                 </font>
@@ -137,10 +137,10 @@
                         </AnchorPane>
                     </TitledPane>
                     <TitledPane fx:id="t_minimumfraction" accessibleHelp="MINIMUMFRACTION">
-                        <AnchorPane prefHeight="12.0" prefWidth="557.0" minHeight="29" maxHeight="29">
+                        <AnchorPane prefHeight="12.0" prefWidth="547.0" minHeight="29" maxHeight="29">
 
                             <TextField fx:id="minimumfraction" accessibleHelp="MINIMUMFRACTION"
-                                       prefHeight="29.0" prefWidth="557.0">
+                                       prefHeight="29.0" prefWidth="547.0">
                                 <font>
                                     <Font name="System Bold" size="13.0"/>
                                 </font>
@@ -149,11 +149,11 @@
                         </AnchorPane>
                     </TitledPane>
                     <TitledPane fx:id="t_tolerance" accessibleHelp="TOLERANCE">
-                        <AnchorPane prefHeight="12.0" prefWidth="557.0" minHeight="29" maxHeight="29">
+                        <AnchorPane prefHeight="12.0" prefWidth="547.0" minHeight="29" maxHeight="29">
 
                             <TextField fx:id="tolerance" accessibleHelp="TOLERANCE"
                                        prefHeight="29.0"
-                                       prefWidth="557.0">
+                                       prefWidth="547.0">
                                 <font>
                                     <Font name="System Bold" size="13.0"/>
                                 </font>
@@ -162,10 +162,10 @@
                         </AnchorPane>
                     </TitledPane>
                     <TitledPane fx:id="t_kpitype" accessibleHelp="KPITYPE">
-                        <AnchorPane prefHeight="12.0" prefWidth="557.0" minHeight="29" maxHeight="29">
+                        <AnchorPane prefHeight="12.0" prefWidth="547.0" minHeight="29" maxHeight="29">
 
                             <TextField fx:id="kpitype" accessibleHelp="KPITYPE" prefHeight="29.0"
-                                       prefWidth="557.0">
+                                       prefWidth="547.0">
                                 <font>
                                     <Font name="System Bold" size="13.0"/>
                                 </font>
@@ -174,11 +174,11 @@
                         </AnchorPane>
                     </TitledPane>
                     <TitledPane fx:id="t_plannerUrl" accessibleHelp="PLANNER_URL">
-                        <AnchorPane prefHeight="12.0" prefWidth="557.0" minHeight="29" maxHeight="29">
+                        <AnchorPane prefHeight="12.0" prefWidth="547.0" minHeight="29" maxHeight="29">
 
                             <TextField fx:id="plannerUrl" accessibleHelp="PLANNER_URL"
                                        prefHeight="29.0"
-                                       prefWidth="557.0">
+                                       prefWidth="547.0">
                                 <font>
                                     <Font name="System Bold" size="13.0"/>
                                 </font>
@@ -187,10 +187,10 @@
                         </AnchorPane>
                     </TitledPane>
                     <TitledPane fx:id="t_resorceApi" accessibleHelp="RESOURCE_API_URL">
-                        <AnchorPane prefHeight="12.0" prefWidth="557.0" minHeight="29" maxHeight="29">
+                        <AnchorPane prefHeight="12.0" prefWidth="547.0" minHeight="29" maxHeight="29">
 
                             <TextField fx:id="resorceApi" accessibleHelp="RESOURCE_API_URL"
-                                       prefHeight="29.0" prefWidth="557.0">
+                                       prefHeight="29.0" prefWidth="547.0">
                                 <font>
                                     <Font name="System Bold" size="13.0"/>
                                 </font>
@@ -199,10 +199,10 @@
                         </AnchorPane>
                     </TitledPane>
                     <TitledPane fx:id="t_ifupdiff" accessibleHelp="IfUPdiff">
-                        <AnchorPane prefHeight="12.0" prefWidth="557.0" minHeight="29" maxHeight="29">
+                        <AnchorPane prefHeight="12.0" prefWidth="547.0" minHeight="29" maxHeight="29">
 
                             <TextField fx:id="ifupdiff" accessibleHelp="IfUPdiff" prefHeight="29.0"
-                                       prefWidth="557.0">
+                                       prefWidth="547.0">
                                 <font>
                                     <Font name="System Bold" size="13.0"/>
                                 </font>
@@ -211,10 +211,10 @@
                         </AnchorPane>
                     </TitledPane>
                     <TitledPane fx:id="t_thresholdUpdiff" accessibleHelp="threshold_UPdiff">
-                        <AnchorPane prefHeight="12.0" prefWidth="557.0" minHeight="29" maxHeight="29">
+                        <AnchorPane prefHeight="12.0" prefWidth="547.0" minHeight="29" maxHeight="29">
 
                             <TextField fx:id="thresholdUpdiff" accessibleHelp="threshold_UPdiff"
-                                       prefHeight="29.0" prefWidth="557.0">
+                                       prefHeight="29.0" prefWidth="547.0">
                                 <font>
                                     <Font name="System Bold" size="13.0"/>
                                 </font>
@@ -223,11 +223,11 @@
                         </AnchorPane>
                     </TitledPane>
                     <TitledPane fx:id="t_skippedreportsUpdiff" accessibleHelp="skippedreports_UPdiff">
-                        <AnchorPane prefHeight="12.0" prefWidth="557.0" minHeight="29" maxHeight="29">
+                        <AnchorPane prefHeight="12.0" prefWidth="547.0" minHeight="29" maxHeight="29">
 
                             <TextField fx:id="skippedreportsUpdiff"
                                        accessibleHelp="skippedreports_UPdiff"
-                                       prefHeight="29.0" prefWidth="557.0">
+                                       prefHeight="29.0" prefWidth="547.0">
                                 <font>
                                     <Font name="System Bold" size="13.0"/>
                                 </font>
@@ -236,10 +236,10 @@
                         </AnchorPane>
                     </TitledPane>
                     <TitledPane fx:id="t_cache" accessibleHelp="CACHE">
-                        <AnchorPane prefHeight="12.0" prefWidth="557.0" minHeight="29" maxHeight="29">
+                        <AnchorPane prefHeight="12.0" prefWidth="547.0" minHeight="29" maxHeight="29">
 
                             <TextField fx:id="cache" accessibleHelp="CACHE" prefHeight="29.0"
-                                       prefWidth="557.0">
+                                       prefWidth="547.0">
                                 <font>
                                     <Font name="System Bold" size="13.0"/>
                                 </font>
@@ -248,10 +248,10 @@
                         </AnchorPane>
                     </TitledPane>
                     <TitledPane fx:id="t_metricsGroupKey" accessibleHelp="METRICS_GROUPKEY">
-                        <AnchorPane prefHeight="12.0" prefWidth="557.0" minHeight="29" maxHeight="29">
+                        <AnchorPane prefHeight="12.0" prefWidth="547.0" minHeight="29" maxHeight="29">
 
                             <TextField fx:id="metricsGroupKey" accessibleHelp="METRICS_GROUPKEY"
-                                       prefHeight="29.0" prefWidth="557.0">
+                                       prefHeight="29.0" prefWidth="547.0">
                                 <font>
                                     <Font name="System Bold" size="13.0"/>
                                 </font>
@@ -264,13 +264,13 @@
 
         </AnchorPane>
     </ScrollPane>
-    <Button fx:id="save" layoutX="200.0" layoutY="388.0" mnemonicParsing="false" onAction="#saveOptions"
+    <Button fx:id="save" layoutX="200.0" layoutY="393.0" mnemonicParsing="false" onAction="#saveOptions"
             prefHeight="25.0" prefWidth="71.0" text="Save" textOverrun="CLIP">
         <font>
             <Font name="System Bold" size="13.0"/>
         </font>
     </Button>
-    <Button fx:id="undoOptions" layoutX="290.0" layoutY="388.0" mnemonicParsing="false" onAction="#undoOptions"
+    <Button fx:id="undoOptions" layoutX="290.0" layoutY="393.0" mnemonicParsing="false" onAction="#undoOptions"
             prefHeight="25.0" prefWidth="71.0" text="Undo">
         <font>
             <Font name="System Bold" size="13.0"/>

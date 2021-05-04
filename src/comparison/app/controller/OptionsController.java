@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TitledPane;
+import javafx.scene.control.Tooltip;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 
@@ -13,6 +14,7 @@ import java.util.Map;
 
 
 public class OptionsController extends ControllerHelper {
+    private final Integer MAX_SIZE = 100;
     @FXML
     TitledPane t_api;
     @FXML
@@ -103,9 +105,7 @@ public class OptionsController extends ControllerHelper {
         options.saveProperty(fields);
         updateOptions();
         optionsFields.keySet().forEach(titledPane -> {
-            String value = options.getProperties().getProperty(titledPane.getAccessibleHelp());
-            titledPane.setText(titledPane.getAccessibleHelp() +
-                    " (" + (value.length() < 110 ? value : value.substring(0, 110) + "...") + ")");
+            checkTitledPaneValue(titledPane);
         });
 
     }
@@ -120,6 +120,27 @@ public class OptionsController extends ControllerHelper {
         setOption();
     }
 
+    private void checkTitledPaneValue(TitledPane titledPane){
+        String titledPaneValue = options.getProperties().getProperty(titledPane.getAccessibleHelp());
+        if (titledPaneValue.length() >= MAX_SIZE) {
+            titledPane.setText(titledPane.getAccessibleHelp() + " (" + titledPaneValue.substring(0, MAX_SIZE - 20) + "...)");
+            titledPane.setTooltip(createTooltip(titledPaneValue));
+        } else {
+            titledPane.setText(titledPane.getAccessibleHelp() + " (" + titledPaneValue + ")");
+            titledPane.setTooltip(null);
+        }
+    }
+
+    private Tooltip createTooltip(String text) {
+        Tooltip tooltip = new Tooltip(text);
+        Font font = new Font(14);
+        tooltip.setFont(font);
+        tooltip.setMaxWidth(300);
+        tooltip.setWrapText(true);
+        tooltipStartTiming(tooltip, 500);
+        return tooltip;
+    }
+
     private void setOption() {
         try {
             setOptionsFields(
@@ -130,9 +151,7 @@ public class OptionsController extends ControllerHelper {
                             minimumfraction, tolerance, kpitype, plannerUrl, resorceApi, ifupdiff, thresholdUpdiff, skippedreportsUpdiff, cache, metricsGroupKey)
             );
             optionsFields.forEach((titledPane, textField) -> {
-                String titledPaneValue = options.getProperties().getProperty(titledPane.getAccessibleHelp());
-                titledPane.setText(titledPane.getAccessibleHelp() +
-                        " (" + (titledPaneValue.length() < 110 ? titledPaneValue : titledPaneValue.substring(0, 110) + "...") + ")");
+                checkTitledPaneValue(titledPane);
                 titledPane.setFont(Font.font(null, FontWeight.BOLD, 12));
                 textField.setText(options.getProperties().getProperty(textField.getAccessibleHelp()));
             });
