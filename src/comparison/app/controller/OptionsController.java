@@ -120,7 +120,7 @@ public class OptionsController extends ControllerHelper {
         String titledPaneValue = options.getProperties().getProperty(titledPane.getAccessibleHelp());
         int MAX_SIZE = 110;
         if (titledPaneValue.length() >= MAX_SIZE) {
-            titledPane.setText(titledPane.getAccessibleHelp() + " (" + titledPaneValue.substring(0, MAX_SIZE - 20) + "...)");
+            titledPane.setText(titledPane.getAccessibleHelp() + " (" + titledPaneValue.substring(0, MAX_SIZE - 50) + "...)");
             titledPane.setTooltip(createTooltip(titledPaneValue));
         } else {
             titledPane.setText(titledPane.getAccessibleHelp() + " (" + titledPaneValue + ")");
