@@ -7,9 +7,9 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="anchorId" prefHeight="572.0" prefWidth="505.0" style="-fx-background-color: #ebebeb;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="comparison.app.controller.MainController">
+<AnchorPane fx:id="anchorId" style="-fx-background-color: #ebebeb;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="comparison.app.controller.MainController">
     <children>
-        <TabPane layoutY="24.0" prefHeight="896.0" prefWidth="820.0" tabClosingPolicy="UNAVAILABLE">
+        <TabPane layoutY="24.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
             <tabs>
                 <Tab text="Options">
                     <content>
@@ -26,16 +26,21 @@
                         <fx:include fx:id="compareTab" source="comparison.fxml" />
                     </content>
                 </Tab>
+                <Tab text="Test Options">
+                    <content>
+                       <fx:include fx:id="testOptionsTab" source="test_options.fxml" />
+                    </content>
+                </Tab>
             </tabs>
         </TabPane>
-        <MenuBar layoutX="-8.0" layoutY="2.0" prefHeight="25.0" prefWidth="828.0">
+        <MenuBar layoutX="-8.0" layoutY="2.0" AnchorPane.leftAnchor="-8.0" AnchorPane.rightAnchor="0.0">
             <menus>
                 <Menu mnemonicParsing="false" text="Settings">
                     <items>
                         <MenuItem fx:id="generalSettings" mnemonicParsing="false" onAction="#general" text="General settings" />
                     </items>
                     <items>
-                        <MenuItem visible="false" mnemonicParsing="false" text="Settings path"  onAction="#settings" />
+                        <MenuItem mnemonicParsing="false" onAction="#settings" text="Settings path" visible="false" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="Help">

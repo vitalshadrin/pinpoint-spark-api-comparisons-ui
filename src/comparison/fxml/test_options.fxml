@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane style="-fx-background-color: #ebebeb;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="comparison.app.controller.TestOptionsController">
+    <SplitPane dividerPositions="0.8463611859838275" orientation="VERTICAL" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="600.0">
+                <children>
+                    <Pane fx:id="pane" layoutX="25.0" layoutY="14.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <children>
+                            <ScrollPane fx:id="scrollPane" fitToWidth="true" minViewportHeight="100.0" minViewportWidth="200.0" prefViewportHeight="300.0">
+                                <content>
+                                    <Accordion fx:id="accordion" prefHeight="381.0" prefWidth="298.0">
+                                        <panes>
+                                            <TitledPane maxWidth="-Infinity" prefHeight="56.0" prefWidth="298.0" text="untitled 1">
+                                                <content>
+                                                    <AnchorPane fx:id="paneText" minHeight="0.0" minWidth="0.0" prefHeight="24.0" prefWidth="296.0">
+                                                        <children>
+                                                            <TextField fx:id="text" layoutX="10.6" prefHeight="30.0" prefWidth="293.0" AnchorPane.leftAnchor="-8.0" AnchorPane.rightAnchor="-8.0" />
+                                                        </children>
+                                                    </AnchorPane>
+                                                </content>
+                                            </TitledPane>
+                                            <TitledPane maxWidth="-Infinity" prefHeight="56.0" prefWidth="298.0" text="untitled 1">
+                                                <content>
+                                                    <AnchorPane fx:id="paneText1" minHeight="0.0" minWidth="0.0">
+                                                        <children>
+                                                            <TextField fx:id="text1" layoutX="10.6" prefHeight="30.0" prefWidth="293.0" AnchorPane.leftAnchor="-8.0" AnchorPane.rightAnchor="-8.0" />
+                                                        </children>
+                                                    </AnchorPane>
+                                                </content>
+                                            </TitledPane>
+                                            <TitledPane maxWidth="-Infinity" prefHeight="56.0" prefWidth="298.0" text="untitled 1">
+                                                <content>
+                                                    <AnchorPane fx:id="paneText2" minHeight="0.0" minWidth="0.0">
+                                                        <children>
+                                                            <TextField fx:id="text2" layoutX="10.6" prefHeight="30.0" prefWidth="293.0" AnchorPane.leftAnchor="-8.0" AnchorPane.rightAnchor="-8.0" />
+                                                        </children>
+                                                    </AnchorPane>
+                                                </content>
+                                            </TitledPane>
+                                            <TitledPane maxWidth="-Infinity" prefHeight="56.0" prefWidth="298.0" text="untitled 1">
+                                                <content>
+                                                    <AnchorPane fx:id="paneText3" minHeight="0.0" minWidth="0.0">
+                                                        <children>
+                                                            <TextField fx:id="text3" layoutX="10.6" prefHeight="30.0" prefWidth="293.0" AnchorPane.leftAnchor="-8.0" AnchorPane.rightAnchor="-8.0" />
+                                                        </children>
+                                                    </AnchorPane>
+                                                </content>
+                                            </TitledPane>
+                                            <TitledPane maxWidth="-Infinity" prefHeight="56.0" prefWidth="298.0" text="untitled 1">
+                                                <content>
+                                                    <AnchorPane fx:id="paneText4" minHeight="0.0" minWidth="0.0">
+                                                        <children>
+                                                            <TextField fx:id="text4" layoutX="10.6" prefHeight="30.0" prefWidth="293.0" AnchorPane.leftAnchor="-8.0" AnchorPane.rightAnchor="-8.0" />
+                                                        </children>
+                                                    </AnchorPane>
+                                                </content>
+                                            </TitledPane>
+                                            <TitledPane maxWidth="-Infinity" prefHeight="56.0" prefWidth="298.0" text="untitled 1">
+                                                <content>
+                                                    <AnchorPane fx:id="paneText5" minHeight="0.0" minWidth="0.0">
+                                                        <children>
+                                                            <TextField fx:id="text5" layoutX="10.6" prefHeight="30.0" prefWidth="293.0" AnchorPane.leftAnchor="-8.0" AnchorPane.rightAnchor="-8.0" />
+                                                        </children>
+                                                    </AnchorPane>
+                                                </content>
+                                            </TitledPane>
+                                            <TitledPane maxWidth="-Infinity" prefHeight="56.0" prefWidth="298.0" text="untitled 1">
+                                                <content>
+                                                    <AnchorPane fx:id="paneText51" minHeight="0.0" minWidth="0.0">
+                                                        <children>
+                                                            <TextField fx:id="text51" layoutX="10.6" prefHeight="30.0" prefWidth="293.0" AnchorPane.leftAnchor="-8.0" AnchorPane.rightAnchor="-8.0" />
+                                                        </children>
+                                                    </AnchorPane>
+                                                </content>
+                                            </TitledPane>
+                                            <TitledPane maxWidth="-Infinity" prefHeight="56.0" prefWidth="298.0" text="untitled 1">
+                                                <content>
+                                                    <AnchorPane fx:id="paneText52" minHeight="0.0" minWidth="0.0">
+                                                        <children>
+                                                            <TextField fx:id="text52" layoutX="10.6" prefHeight="30.0" prefWidth="293.0" AnchorPane.leftAnchor="-8.0" AnchorPane.rightAnchor="-8.0" />
+                                                        </children>
+                                                    </AnchorPane>
+                                                </content>
+                                            </TitledPane>
+                                            <TitledPane maxWidth="-Infinity" prefHeight="56.0" prefWidth="298.0" text="untitled 1">
+                                                <content>
+                                                    <AnchorPane fx:id="paneText53" minHeight="0.0" minWidth="0.0">
+                                                        <children>
+                                                            <TextField fx:id="text53" layoutX="10.6" prefHeight="30.0" prefWidth="293.0" AnchorPane.leftAnchor="-8.0" AnchorPane.rightAnchor="-8.0" />
+                                                        </children>
+                                                    </AnchorPane>
+                                                </content>
+                                            </TitledPane>
+                                            <TitledPane maxWidth="-Infinity" prefHeight="56.0" prefWidth="298.0" text="untitled 1">
+                                                <content>
+                                                    <AnchorPane fx:id="paneText54" minHeight="0.0" minWidth="0.0">
+                                                        <children>
+                                                            <TextField fx:id="text54" layoutX="10.6" prefHeight="30.0" prefWidth="293.0" AnchorPane.leftAnchor="-8.0" AnchorPane.rightAnchor="-8.0" />
+                                                        </children>
+                                                    </AnchorPane>
+                                                </content>
+                                            </TitledPane>
+                                            <TitledPane maxWidth="-Infinity" prefHeight="56.0" prefWidth="298.0" text="untitled 1">
+                                                <content>
+                                                    <AnchorPane fx:id="paneText55" minHeight="0.0" minWidth="0.0">
+                                                        <children>
+                                                            <TextField fx:id="text55" layoutX="10.6" prefHeight="30.0" prefWidth="293.0" AnchorPane.leftAnchor="-8.0" AnchorPane.rightAnchor="-8.0" />
+                                                        </children>
+                                                    </AnchorPane>
+                                                </content>
+                                            </TitledPane>
+                                            <TitledPane maxWidth="-Infinity" prefHeight="56.0" prefWidth="298.0" text="untitled 1">
+                                                <content>
+                                                    <AnchorPane fx:id="paneText56" minHeight="0.0" minWidth="0.0">
+                                                        <children>
+                                                            <TextField fx:id="text56" layoutX="10.6" prefHeight="30.0" prefWidth="293.0" AnchorPane.leftAnchor="-8.0" AnchorPane.rightAnchor="-8.0" />
+                                                        </children>
+                                                    </AnchorPane>
+                                                </content>
+                                            </TitledPane>
+                                            <TitledPane maxWidth="-Infinity" prefHeight="56.0" prefWidth="298.0" text="untitled 1">
+                                                <content>
+                                                    <AnchorPane fx:id="paneText57" minHeight="0.0" minWidth="0.0">
+                                                        <children>
+                                                            <TextField fx:id="text57" layoutX="10.6" prefHeight="30.0" prefWidth="293.0" AnchorPane.leftAnchor="-8.0" AnchorPane.rightAnchor="-8.0" />
+                                                        </children>
+                                                    </AnchorPane>
+                                                </content>
+                                            </TitledPane>
+                                            <TitledPane maxWidth="-Infinity" prefHeight="56.0" prefWidth="298.0" text="last">
+                                                <content>
+                                                    <AnchorPane fx:id="paneText58" minHeight="0.0" minWidth="0.0">
+                                                        <children>
+                                                            <TextField fx:id="text58" layoutX="10.6" prefHeight="30.0" prefWidth="293.0" AnchorPane.leftAnchor="-8.0" AnchorPane.rightAnchor="-8.0" />
+                                                        </children>
+                                                    </AnchorPane>
+                                                </content>
+                                            </TitledPane>
+                                        </panes>
+                                    </Accordion>
+                                </content>
+                            </ScrollPane>
+                        </children>
+                    </Pane>
+                </children>
+            </AnchorPane>
+            <AnchorPane minHeight="200.0" minWidth="200.0" prefHeight="128.0" prefWidth="600.0" />
+        </items>
+    </SplitPane>
+</AnchorPane>
