@@ -17,7 +17,11 @@ public class Main extends Application {
     public void start(Stage stage) {
         stage.setTitle("Comparison v1.0.2");
         stage.setResizable(true);
-        stage.setScene(new Scene(rootNode, 563, 480));
+        stage.setScene(new Scene(rootNode));
+        stage.setMinWidth(560);
+        stage.setMinHeight(560);
+        stage.setMaxWidth(1100);
+        stage.setMaxHeight(560);
         stage.getIcons().add(new Image(getClass().getResourceAsStream("/comparison/icons/ic_launcher.png")));
         stage.show();
         if (optionsFieldsErrorsStatus)
