@@ -1,280 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.Blend?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
-<AnchorPane prefHeight="595.0" prefWidth="563.0" style="-fx-background-color: #ebebeb;"
-            xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="comparison.app.controller.OptionsController" >
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-    <ScrollPane prefHeight="380.0" prefWidth="563.0">
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="532.0" prefWidth="0.0">
-            <Accordion maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="500.0" prefWidth="547.0">
-                <panes>
-                    <TitledPane fx:id="t_api" accessibleHelp="API">
-                        <AnchorPane prefHeight="12.0" prefWidth="547.0" minHeight="29"
-                                    maxHeight="29">
-                            <TextField fx:id="api" accessibleHelp="API" prefHeight="29.0"
-                                       prefWidth="547.0">
-                                <font>
-                                    <Font name="System Bold" size="13.0"/>
-                                </font>
-                            </TextField>
-                        </AnchorPane>
-                    </TitledPane>
-                    <TitledPane fx:id="t_demographics" accessibleHelp="DEMOGRAPHICS">
-                        <AnchorPane prefHeight="12.0" prefWidth="547.0" minHeight="29" maxHeight="29">
-                            <TextField fx:id="demographics" accessibleHelp="DEMOGRAPHICS"
-                                       prefHeight="29.0"
-                                       prefWidth="547.0">
-                                <font>
-                                    <Font name="System Bold" size="13.0"/>
-                                </font>
-                            </TextField>
-                        </AnchorPane>
-                        <effect>
-                            <Blend/>
-                        </effect>
-                    </TitledPane>
-                    <TitledPane fx:id="t_media" accessibleHelp="MEDIA">
-                        <AnchorPane prefHeight="12.0" prefWidth="547.0" minHeight="29" maxHeight="29">
+<AnchorPane style="-fx-background-color: #ebebeb;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="comparison.app.controller.OptionsController">
+    <SplitPane dividerPositions="0.8463611859838275" orientation="VERTICAL" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+            <AnchorPane maxHeight="400.0" minHeight="400.0" minWidth="0.0" prefHeight="400.0">
+                <children>
+                    <Pane fx:id="pane" layoutX="25.0" layoutY="14.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <children>
+                            <ScrollPane fx:id="scrollPane" fitToWidth="true" minViewportHeight="100.0" minViewportWidth="200.0" prefViewportHeight="300.0">
+                                <content>
+                                    <Accordion fx:id="accordion" prefHeight="381.0" prefWidth="298.0">
 
-                            <TextField fx:id="media" accessibleHelp="MEDIA" prefHeight="29.0"
-                                       prefWidth="547.0">
-                                <font>
-                                    <Font name="System Bold" size="13.0"/>
-                                </font>
-                            </TextField>
-                        </AnchorPane>
-                    </TitledPane>
-                    <TitledPane fx:id="t_periods" accessibleHelp="PERIODS">
-                        <AnchorPane prefHeight="12.0" prefWidth="547.0" minHeight="29" maxHeight="29">
-
-                            <TextField fx:id="periods" accessibleHelp="PERIODS" prefHeight="29.0"
-                                       prefWidth="547.0">
-                                <font>
-                                    <Font name="System Bold" size="13.0"/>
-                                </font>
-                            </TextField>
-
-                        </AnchorPane>
-                    </TitledPane>
-                    <TitledPane fx:id="t_universes" accessibleHelp="UNIVERSES">
-                        <AnchorPane prefHeight="12.0" prefWidth="547.0" minHeight="29" maxHeight="29">
-
-                            <TextField fx:id="universes" accessibleHelp="UNIVERSES"
-                                       prefHeight="29.0"
-                                       prefWidth="547.0">
-                                <font>
-                                    <Font name="System Bold" size="13.0"/>
-                                </font>
-                            </TextField>
-
-                        </AnchorPane>
-                    </TitledPane>
-                    <TitledPane fx:id="t_subuniverses" accessibleHelp="SUBUNIVERSES">
-                        <AnchorPane prefHeight="12.0" prefWidth="547.0" minHeight="29" maxHeight="29">
-
-                            <TextField fx:id="subuniverses" accessibleHelp="SUBUNIVERSES"
-                                       prefHeight="29.0"
-                                       prefWidth="547.0">
-                                <font>
-                                    <Font name="System Bold" size="13.0"/>
-                                </font>
-                            </TextField>
-
-                        </AnchorPane>
-                    </TitledPane>
-                    <TitledPane fx:id="t_crossperiods" accessibleHelp="CROSSPERIODS">
-                        <AnchorPane prefHeight="12.0" prefWidth="547.0" minHeight="29" maxHeight="29">
-
-                            <TextField fx:id="crossperiods" accessibleHelp="CROSSPERIODS"
-                                       prefHeight="29.0"
-                                       prefWidth="547.0">
-                                <font>
-                                    <Font name="System Bold" size="13.0"/>
-                                </font>
-                            </TextField>
-
-                        </AnchorPane>
-                    </TitledPane>
-                    <TitledPane fx:id="t_build" accessibleHelp="BUILD">
-                        <AnchorPane prefHeight="12.0" prefWidth="547.0" minHeight="29" maxHeight="29">
-
-                            <TextField fx:id="build" accessibleHelp="BUILD" prefHeight="29.0"
-                                       prefWidth="547.0">
-                                <font>
-                                    <Font name="System Bold" size="13.0"/>
-                                </font>
-                            </TextField>
-
-                        </AnchorPane>
-                    </TitledPane>
-                    <TitledPane fx:id="t_threads" accessibleHelp="THREADS">
-                        <AnchorPane prefHeight="12.0" prefWidth="547.0" minHeight="29" maxHeight="29">
-
-                            <TextField fx:id="threads" accessibleHelp="THREADS" prefHeight="29.0"
-                                       prefWidth="547.0">
-                                <font>
-                                    <Font name="System Bold" size="13.0"/>
-                                </font>
-                            </TextField>
-
-                        </AnchorPane>
-                    </TitledPane>
-                    <TitledPane fx:id="t_threshold" accessibleHelp="THRESHOLD">
-                        <AnchorPane prefHeight="12.0" prefWidth="547.0" minHeight="29" maxHeight="29">
-
-                            <TextField fx:id="threshold" accessibleHelp="THRESHOLD"
-                                       prefHeight="29.0"
-                                       prefWidth="547.0">
-                                <font>
-                                    <Font name="System Bold" size="13.0"/>
-                                </font>
-                            </TextField>
-
-                        </AnchorPane>
-                    </TitledPane>
-                    <TitledPane fx:id="t_minimumfraction" accessibleHelp="MINIMUMFRACTION">
-                        <AnchorPane prefHeight="12.0" prefWidth="547.0" minHeight="29" maxHeight="29">
-
-                            <TextField fx:id="minimumfraction" accessibleHelp="MINIMUMFRACTION"
-                                       prefHeight="29.0" prefWidth="547.0">
-                                <font>
-                                    <Font name="System Bold" size="13.0"/>
-                                </font>
-                            </TextField>
-
-                        </AnchorPane>
-                    </TitledPane>
-                    <TitledPane fx:id="t_tolerance" accessibleHelp="TOLERANCE">
-                        <AnchorPane prefHeight="12.0" prefWidth="547.0" minHeight="29" maxHeight="29">
-
-                            <TextField fx:id="tolerance" accessibleHelp="TOLERANCE"
-                                       prefHeight="29.0"
-                                       prefWidth="547.0">
-                                <font>
-                                    <Font name="System Bold" size="13.0"/>
-                                </font>
-                            </TextField>
-
-                        </AnchorPane>
-                    </TitledPane>
-                    <TitledPane fx:id="t_kpitype" accessibleHelp="KPITYPE">
-                        <AnchorPane prefHeight="12.0" prefWidth="547.0" minHeight="29" maxHeight="29">
-
-                            <TextField fx:id="kpitype" accessibleHelp="KPITYPE" prefHeight="29.0"
-                                       prefWidth="547.0">
-                                <font>
-                                    <Font name="System Bold" size="13.0"/>
-                                </font>
-                            </TextField>
-
-                        </AnchorPane>
-                    </TitledPane>
-                    <TitledPane fx:id="t_plannerUrl" accessibleHelp="PLANNER_URL">
-                        <AnchorPane prefHeight="12.0" prefWidth="547.0" minHeight="29" maxHeight="29">
-
-                            <TextField fx:id="plannerUrl" accessibleHelp="PLANNER_URL"
-                                       prefHeight="29.0"
-                                       prefWidth="547.0">
-                                <font>
-                                    <Font name="System Bold" size="13.0"/>
-                                </font>
-                            </TextField>
-
-                        </AnchorPane>
-                    </TitledPane>
-                    <TitledPane fx:id="t_resorceApi" accessibleHelp="RESOURCE_API_URL">
-                        <AnchorPane prefHeight="12.0" prefWidth="547.0" minHeight="29" maxHeight="29">
-
-                            <TextField fx:id="resorceApi" accessibleHelp="RESOURCE_API_URL"
-                                       prefHeight="29.0" prefWidth="547.0">
-                                <font>
-                                    <Font name="System Bold" size="13.0"/>
-                                </font>
-                            </TextField>
-
-                        </AnchorPane>
-                    </TitledPane>
-                    <TitledPane fx:id="t_ifupdiff" accessibleHelp="IfUPdiff">
-                        <AnchorPane prefHeight="12.0" prefWidth="547.0" minHeight="29" maxHeight="29">
-
-                            <TextField fx:id="ifupdiff" accessibleHelp="IfUPdiff" prefHeight="29.0"
-                                       prefWidth="547.0">
-                                <font>
-                                    <Font name="System Bold" size="13.0"/>
-                                </font>
-                            </TextField>
-
-                        </AnchorPane>
-                    </TitledPane>
-                    <TitledPane fx:id="t_thresholdUpdiff" accessibleHelp="threshold_UPdiff">
-                        <AnchorPane prefHeight="12.0" prefWidth="547.0" minHeight="29" maxHeight="29">
-
-                            <TextField fx:id="thresholdUpdiff" accessibleHelp="threshold_UPdiff"
-                                       prefHeight="29.0" prefWidth="547.0">
-                                <font>
-                                    <Font name="System Bold" size="13.0"/>
-                                </font>
-                            </TextField>
-
-                        </AnchorPane>
-                    </TitledPane>
-                    <TitledPane fx:id="t_skippedreportsUpdiff" accessibleHelp="skippedreports_UPdiff">
-                        <AnchorPane prefHeight="12.0" prefWidth="547.0" minHeight="29" maxHeight="29">
-
-                            <TextField fx:id="skippedreportsUpdiff"
-                                       accessibleHelp="skippedreports_UPdiff"
-                                       prefHeight="29.0" prefWidth="547.0">
-                                <font>
-                                    <Font name="System Bold" size="13.0"/>
-                                </font>
-                            </TextField>
-
-                        </AnchorPane>
-                    </TitledPane>
-                    <TitledPane fx:id="t_cache" accessibleHelp="CACHE">
-                        <AnchorPane prefHeight="12.0" prefWidth="547.0" minHeight="29" maxHeight="29">
-
-                            <TextField fx:id="cache" accessibleHelp="CACHE" prefHeight="29.0"
-                                       prefWidth="547.0">
-                                <font>
-                                    <Font name="System Bold" size="13.0"/>
-                                </font>
-                            </TextField>
-
-                        </AnchorPane>
-                    </TitledPane>
-                    <TitledPane fx:id="t_metricsGroupKey" accessibleHelp="METRICS_GROUPKEY">
-                        <AnchorPane prefHeight="12.0" prefWidth="547.0" minHeight="29" maxHeight="29">
-
-                            <TextField fx:id="metricsGroupKey" accessibleHelp="METRICS_GROUPKEY"
-                                       prefHeight="29.0" prefWidth="547.0">
-                                <font>
-                                    <Font name="System Bold" size="13.0"/>
-                                </font>
-                            </TextField>
-
-                        </AnchorPane>
-                    </TitledPane>
-                </panes>
-            </Accordion>
-
-        </AnchorPane>
-    </ScrollPane>
-    <Button fx:id="save" layoutX="200.0" layoutY="393.0" mnemonicParsing="false" onAction="#saveOptions"
-            prefHeight="25.0" prefWidth="71.0" text="Save" textOverrun="CLIP">
-        <font>
-            <Font name="System Bold" size="13.0"/>
-        </font>
-    </Button>
-    <Button fx:id="undoOptions" layoutX="290.0" layoutY="393.0" mnemonicParsing="false" onAction="#undoOptions"
-            prefHeight="25.0" prefWidth="71.0" text="Undo">
-        <font>
-            <Font name="System Bold" size="13.0"/>
-        </font>
-    </Button>
-
+                                    </Accordion>
+                                </content>
+                            </ScrollPane>
+                        </children>
+                    </Pane>
+                </children>
+            </AnchorPane>
+            <AnchorPane fx:id="anchorPane" minHeight="200.0" minWidth="200.0" prefHeight="200.0">
+            <children>
+               <GridPane fx:id="grid" alignment="CENTER" layoutX="-2.0" prefHeight="30.0" prefWidth="602.0" AnchorPane.bottomAnchor="150.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
+                 <columnConstraints>
+                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                 </columnConstraints>
+                 <rowConstraints>
+                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                 </rowConstraints>
+                  <children>
+                     <Button fx:id="save" contentDisplay="CENTER" onAction="#saveOptions" mnemonicParsing="false" prefHeight="30.0" prefWidth="85.0" text="Save" GridPane.halignment="RIGHT" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER">
+                        <font>
+                           <Font name="Arial Bold" size="14.0" />
+                        </font>
+                        <GridPane.margin>
+                           <Insets right="15.0" />
+                        </GridPane.margin>
+                     </Button>
+                     <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#undoOptions" prefHeight="30.0" prefWidth="85.0" text="Undo" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER">
+                        <font>
+                           <Font name="Arial Bold" size="14.0" />
+                        </font>
+                        <GridPane.margin>
+                           <Insets left="15.0" />
+                        </GridPane.margin>
+                     </Button>
+                  </children>
+               </GridPane>
+            </children></AnchorPane>
+        </items>
+    </SplitPane>
 </AnchorPane>

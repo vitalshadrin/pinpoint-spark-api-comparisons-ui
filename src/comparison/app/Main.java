@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import static comparison.app.controller.ControllerHelper.optionsFieldsErrorsStatus;
 
@@ -17,11 +18,9 @@ public class Main extends Application {
     public void start(Stage stage) {
         stage.setTitle("Comparison v1.0.2");
         stage.setResizable(true);
-        stage.setScene(new Scene(rootNode));
-        stage.setMinWidth(560);
+        stage.setScene(new Scene(rootNode, 800, 526));
+        stage.setMinWidth(563);
         stage.setMaxWidth(1100);
-        stage.setMinHeight(565);
-        stage.setMaxHeight(565);
         stage.getIcons().add(new Image(getClass().getResourceAsStream("/comparison/icons/ic_launcher.png")));
         stage.show();
         if (optionsFieldsErrorsStatus)

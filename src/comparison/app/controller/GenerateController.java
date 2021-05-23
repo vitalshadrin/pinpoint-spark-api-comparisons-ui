@@ -5,6 +5,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
 
 import java.net.URL;
 import java.util.HashMap;
@@ -33,6 +34,11 @@ public class GenerateController extends ControllerHelper implements Initializabl
     private Label urlLabel;
 
     @FXML
+    private GridPane grid;
+
+    @FXML AnchorPane anchorPane;
+
+    @FXML
     private void generate() {
         boolean readyStatus =
                 validator.validate(url, urlLabel, "Please fill URL.") &
@@ -46,6 +52,8 @@ public class GenerateController extends ControllerHelper implements Initializabl
 
     @FXML
     public void initialize(URL location, ResourceBundle resources) {
+        grid.prefWidthProperty().bind(anchorPane.widthProperty());
+        url.prefWidthProperty().bind(grid.widthProperty());
         HashMap<TextField, Label> textFieldLabelHashMap = new HashMap<TextField, Label>() {{
             put(url, urlLabel);
             put(endpointStorePath, labelGenerateStore);

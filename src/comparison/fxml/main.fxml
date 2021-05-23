@@ -7,7 +7,7 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="anchorId" style="-fx-background-color: #ebebeb;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="comparison.app.controller.MainController">
+<AnchorPane fx:id="anchorId" style="-fx-background-color: #ebebeb;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="comparison.app.controller.MainController">
     <children>
         <TabPane layoutY="24.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
             <tabs>
@@ -24,11 +24,6 @@
                 <Tab text="Compare">
                     <content>
                         <fx:include fx:id="compareTab" source="comparison.fxml" />
-                    </content>
-                </Tab>
-                <Tab text="Test Options">
-                    <content>
-                       <fx:include fx:id="testOptionsTab" source="test_options.fxml" />
                     </content>
                 </Tab>
             </tabs>
