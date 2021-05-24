@@ -33,9 +33,6 @@ public class GenerateController extends ControllerHelper implements Initializabl
     @FXML
     private Label urlLabel;
 
-    @FXML
-    private GridPane grid;
-
     @FXML AnchorPane anchorPane;
 
     @FXML
@@ -52,8 +49,6 @@ public class GenerateController extends ControllerHelper implements Initializabl
 
     @FXML
     public void initialize(URL location, ResourceBundle resources) {
-        grid.prefWidthProperty().bind(anchorPane.widthProperty());
-        url.prefWidthProperty().bind(grid.widthProperty());
         HashMap<TextField, Label> textFieldLabelHashMap = new HashMap<TextField, Label>() {{
             put(url, urlLabel);
             put(endpointStorePath, labelGenerateStore);

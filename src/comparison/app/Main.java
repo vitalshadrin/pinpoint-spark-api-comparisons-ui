@@ -21,6 +21,8 @@ public class Main extends Application {
         stage.setScene(new Scene(rootNode, 800, 526));
         stage.setMinWidth(563);
         stage.setMaxWidth(1100);
+        stage.setMinHeight(565);
+        stage.setMaxHeight(565);
         stage.getIcons().add(new Image(getClass().getResourceAsStream("/comparison/icons/ic_launcher.png")));
         stage.show();
         if (optionsFieldsErrorsStatus)
