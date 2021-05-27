@@ -1,9 +1,64 @@
-.my-btn-class {
+.browse-button-class {
     -fx-border-color: black;
     -fx-background-color: #e8e8e8;
 }
 
-.my-btn-class:hover {
+.browse-button-class:hover {
     -fx-border-color: white;
     -fx-background-color: #e8e8e8;
+}
+
+.compare-button-class {
+    -fx-background-color: #4D92C9;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+}
+
+.compare-button-class:hover {
+    -fx-text-fill: #4D92C9;
+    -fx-border-color: #4D92C9;
+    -fx-background-color: white;
+}
+
+.save-button-class {
+    -fx-background-color: #6aa469;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-text-fill: white;
+    -fx-border-color: #6aa469;
+}
+
+.save-button-class:hover {
+    -fx-text-fill: #6aa469;
+    -fx-border-color: #6aa469;
+    -fx-background-color: white;
+}
+
+.undo-button-class {
+    -fx-background-color: #d0cd7e;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-text-fill: white;
+    -fx-border-color: #d0cd7e;
+}
+
+.undo-button-class:hover {
+    -fx-text-fill: #d0cd7e;
+    -fx-border-color: #d0cd7e;
+    -fx-background-color: white;
+}
+
+
+.cancel-button-class {
+    -fx-background-color: #c97070;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-text-fill: white;
+    -fx-border-color: #c97070;
+}
+
+.cancel-button-class:hover {
+    -fx-text-fill: #c97070;
+    -fx-border-color: #c97070;
+    -fx-background-color: white;
 }

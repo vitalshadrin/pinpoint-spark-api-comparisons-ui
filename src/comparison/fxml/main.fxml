@@ -40,6 +40,9 @@
                 </Menu>
                 <Menu mnemonicParsing="false" text="Help">
                     <items>
+                        <MenuItem fx:id="changeLog" mnemonicParsing="false" onAction="#changeLog" text="Change log" />
+                    </items>
+                    <items>
                         <MenuItem mnemonicParsing="false" onAction="#about" text="About" />
                     </items>
                 </Menu>

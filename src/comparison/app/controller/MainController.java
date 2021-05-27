@@ -42,6 +42,17 @@ public class MainController extends ControllerHelper {
     }
 
     @FXML
+    public void changeLog() {
+        new StageBuilder.Builder()
+                .withFxmlPath("/comparison/fxml/changeLog.fxml")
+                .withIconPath("/comparison/icons/ic_launcher.png")
+                .withTitle("Change log (beta)")
+                .withWeight(437)
+                .withHeight(300)
+                .getStage();
+    }
+
+    @FXML
     public void about() {
         alerts.informationAlert("Application version: 1.0.2 \nFor detailed information please contact: \n* vitali.shadrin.consultant@nielsen.com \n* nina.x.rybchak.consultant@nielsen.com");
     }

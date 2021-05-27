@@ -1,63 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.*?>
-<AnchorPane fx:id="generalPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-            prefHeight="314.0" prefWidth="584.0" xmlns="http://javafx.com/javafx/15.0.1"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="comparison.app.controller.GeneralSettingsController">
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="generalPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="314.0" prefWidth="584.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="comparison.app.controller.GeneralSettingsController">
     <children>
-        <Button layoutX="39.0" layoutY="253.0" mnemonicParsing="false" onAction="#clickGeneralSave" prefHeight="30.0"
-                prefWidth="80.0" text="Save">
-            <font>
-                <Font name="Arial Bold" size="14.0"/>
-            </font>
-        </Button>
-        <Button fx:id="generalCancel" layoutX="464.0" layoutY="253.0" mnemonicParsing="false"
-                onAction="#clickGeneralCancel" prefHeight="30.0" prefWidth="80.0" text="Cancel">
-            <font>
-                <Font name="System Bold" size="14.0"/>
-            </font>
-        </Button>
         <TextField fx:id="all" layoutX="38.0" layoutY="42.0" prefHeight="25.0" prefWidth="506.0">
             <font>
-                <Font size="14.0"/>
+                <Font size="14.0" />
             </font>
         </TextField>
         <TextField fx:id="bau" layoutX="38.0" layoutY="95.0" prefHeight="25.0" prefWidth="506.0">
             <font>
-                <Font size="14.0"/>
+                <Font size="14.0" />
             </font>
         </TextField>
         <TextField fx:id="features" layoutX="38.0" layoutY="150.0" prefHeight="25.0" prefWidth="506.0">
             <font>
-                <Font size="14.0"/>
+                <Font size="14.0" />
             </font>
         </TextField>
         <Label layoutX="38.0" layoutY="20.0" text="all">
             <font>
-                <Font name="System Bold" size="16.0"/>
+                <Font name="System Bold" size="16.0" />
             </font>
         </Label>
         <Label layoutX="38.0" layoutY="73.0" text="bau">
             <font>
-                <Font name="System Bold" size="16.0"/>
+                <Font name="System Bold" size="16.0" />
             </font>
         </Label>
         <TextField fx:id="metadata" layoutX="38.0" layoutY="207.0" prefHeight="25.0" prefWidth="506.0">
             <font>
-                <Font size="14.0"/>
+                <Font size="14.0" />
             </font>
         </TextField>
         <Label layoutX="38.0" layoutY="128.0" text="features">
             <font>
-                <Font name="System Bold" size="16.0"/>
+                <Font name="System Bold" size="16.0" />
             </font>
         </Label>
         <Label layoutX="38.0" layoutY="185.0" text="metadata">
             <font>
-                <Font name="Arial Bold" size="16.0"/>
+                <Font name="Arial Bold" size="16.0" />
             </font>
         </Label>
+      <GridPane layoutX="191.0" layoutY="253.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+              <Button fx:id="generalCancel" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#clickGeneralCancel" prefHeight="30.0" prefWidth="90.0" styleClass="cancel-button-class" stylesheets="@../style/style.css" text="🗙 Cancel" GridPane.columnIndex="1">
+                  <font>
+                      <Font name="System Bold" size="15.0" />
+                  </font>
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin>
+              </Button>
+              <Button mnemonicParsing="false" onAction="#clickGeneralSave" prefHeight="32.0" prefWidth="90.0" styleClass="save-button-class" stylesheets="@../style/style.css" text="✓ Save">
+                  <font>
+                      <Font name="Arial Bold" size="15.0" />
+                  </font>
+               <GridPane.margin>
+                  <Insets right="20.0" />
+               </GridPane.margin>
+              </Button>
+         </children>
+      </GridPane>
     </children>
 </AnchorPane>
