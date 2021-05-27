@@ -1,0 +1,9 @@
+.my-btn-class {
+    -fx-border-color: black;
+    -fx-background-color: #e8e8e8;
+}
+
+.my-btn-class:hover {
+    -fx-border-color: white;
+    -fx-background-color: #e8e8e8;
+}

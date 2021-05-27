@@ -10,7 +10,11 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.Cursor?>
 
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.geometry.Rectangle2D?>
 <AnchorPane fx:id="generateAnchorId" prefHeight="572.0" prefWidth="639.0" style="-fx-background-color: #ebebeb;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="comparison.app.controller.GenerateController">
     <children>
 
@@ -27,7 +31,7 @@
                         <RowConstraints maxHeight="69.0" minHeight="10.0" prefHeight="68.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                     <children>
-                        <TextField fx:id="url" alignment="TOP_LEFT" promptText="URL...">
+                        <TextField fx:id="url" prefHeight="29.0" prefWidth="434.0" alignment="TOP_LEFT" promptText="URL...">
                             <tooltip>
                                 <Tooltip fx:id="urlTooltip" text="Enter endpoint URL">
                                     <font>
@@ -66,7 +70,7 @@
                                 <Insets bottom="50.0" left="30.0" />
                             </GridPane.margin>
                         </Label>
-                        <TextField fx:id="endpointStorePath" promptText="Select directory ...." GridPane.rowIndex="1">
+                        <TextField fx:id="endpointStorePath" prefHeight="29.0" prefWidth="434.0" promptText="Select directory ...." GridPane.rowIndex="1">
                             <tooltip>
                                 <Tooltip text="Select a directory to store results">
                                     <font>
@@ -81,13 +85,26 @@
                         <Insets left="30.0" />
                      </GridPane.margin>
                         </TextField>
-                        <Button fx:id="browseStore" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#browseStoreEndpoint" prefHeight="30.0" text="Browse" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <Button fx:id="browseStore" styleClass="my-btn-class" stylesheets="@../style/style.css" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#browseStoreEndpoint" GridPane.columnIndex="1" GridPane.rowIndex="1">
                             <font>
-                                <Font name="Arial Bold" size="14.0" />
+                                <Font name="Arial Bold" size="0.01" />
                             </font>
                             <GridPane.margin>
-                                <Insets left="15.0" />
+                                <Insets />
                             </GridPane.margin>
+                            <graphic>
+                                <ImageView accessibleRole="BUTTON" cache="true" fitHeight="29.0" fitWidth="32.0" pickOnBounds="true" smooth="false">
+                                    <image>
+                                        <Image url="@../icons/browse.png" />
+                                    </image>
+                                    <viewport>
+                                        <Rectangle2D />
+                                    </viewport>
+                                    <cursor>
+                                        <Cursor fx:constant="DEFAULT" />
+                                    </cursor>
+                                </ImageView>
+                            </graphic>
                         </Button>
                         <Label fx:id="labelGenerateStore" prefHeight="16.0" prefWidth="319.0" textFill="RED" GridPane.rowIndex="1">
                             <font>
