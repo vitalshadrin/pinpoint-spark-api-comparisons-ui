@@ -201,7 +201,7 @@
                             </GridPane.margin>
                         </Label>
                         <Button fx:id="compareBtn" styleClass="compare-button-class" stylesheets="@../style/style.css"
-                                mnemonicParsing="false" onAction="#compare" prefHeight="31.0" prefWidth="101.0"
+                                mnemonicParsing="false" onAction="#compare" prefHeight="31.0" prefWidth="110.0"
                                 text="Compare ▶" textFill="WHITE" GridPane.rowIndex="3">
                             <font>
                                 <Font name="Arial Bold" size="15.0"/>

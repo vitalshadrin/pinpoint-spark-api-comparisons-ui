@@ -16,7 +16,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) {
-        stage.setTitle("Comparison v1.0.2");
+        stage.setTitle("Comparison v1.1.0");
         stage.setResizable(true);
         stage.setScene(new Scene(rootNode, 800, 526));
         stage.setMinWidth(563);

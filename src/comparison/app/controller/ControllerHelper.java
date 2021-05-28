@@ -20,11 +20,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.lang.reflect.Field;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.stream.Collectors;
 
 public class ControllerHelper {
     Validator validator = new Validator();
@@ -35,24 +33,9 @@ public class ControllerHelper {
     public static Boolean optionsFieldsErrorsStatus = false;
     private static String folderPath = "";
 
-
     public void updateOptions() {
         this.options = new PropertiesReader(PropertyPath.OPTIONS);
     }
-
-    /**
-     * @param titledPanes - option titled Panes
-     * @param textFields- option titled Fields
-     * @method set all options in Map
-     */
-    public void setOptionsFields(List<TitledPane> titledPanes, List<TextField> textFields) {
-        titledPanes.forEach(titledPane -> this.optionsFields.put(titledPane,
-                textFields
-                        .stream()
-                        .filter(textField -> titledPane.getAccessibleHelp().equals(textField.getAccessibleHelp()))
-                        .collect(Collectors.toList()).get(0)));
-    }
-
 
     /**
      * @param anchorId  - Main Anchor Pane
