@@ -4,6 +4,9 @@ import comparison.app.components.StageBuilder;
 import javafx.fxml.FXML;
 import javafx.scene.control.MenuItem;
 
+import static comparison.app.file.FilePath.CHANGE_LOG;
+import static comparison.app.file.FilePath.INFO;
+
 
 public class MainController extends ControllerHelper {
 
@@ -43,17 +46,11 @@ public class MainController extends ControllerHelper {
 
     @FXML
     public void changeLog() {
-        new StageBuilder.Builder()
-                .withFxmlPath("/comparison/fxml/changeLog.fxml")
-                .withIconPath("/comparison/icons/ic_launcher.png")
-                .withTitle("Change log (beta)")
-                .withWeight(437)
-                .withHeight(300)
-                .getStage();
+        alerts.informationAlert(fileReader.readFile(CHANGE_LOG));
     }
 
     @FXML
     public void about() {
-        alerts.informationAlert("Application version: 1.1.0 \nFor detailed information please contact: \n* vitali.shadrin.consultant@nielsen.com \n* nina.x.rybchak.consultant@nielsen.com");
+        alerts.informationAlert(fileReader.readFile(INFO));
     }
 }

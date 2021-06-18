@@ -5,7 +5,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.GridPane;
 
 import java.net.URL;
 import java.util.HashMap;
@@ -33,7 +32,8 @@ public class GenerateController extends ControllerHelper implements Initializabl
     @FXML
     private Label urlLabel;
 
-    @FXML AnchorPane anchorPane;
+    @FXML
+    AnchorPane anchorPane;
 
     @FXML
     private void generate() {

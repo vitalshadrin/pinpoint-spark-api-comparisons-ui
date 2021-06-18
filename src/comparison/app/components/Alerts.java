@@ -19,7 +19,7 @@ public class Alerts {
         alert.setContentText(text);
         ((Stage) alert.getDialogPane().getScene().getWindow()).getIcons().add(new Image("/comparison/icons/ic_launcher.png"));
         alert.showAndWait();
-        return alert.getResult() == null ? false : alert.getResult().equals(continueBtn);
+        return alert.getResult() != null && alert.getResult().equals(continueBtn);
     }
 
     public void informationAlert(String text) {

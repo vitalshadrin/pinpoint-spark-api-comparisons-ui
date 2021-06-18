@@ -9,15 +9,11 @@ import java.util.stream.Collectors;
 
 public class PropertiesReader {
     private final Properties properties;
-    private PropertyPath propertyPath;
+    private final PropertyPath propertyPath;
 
     public PropertiesReader(PropertyPath propertyPath) {
         this.propertyPath = propertyPath;
         this.properties = getProperty(propertyPath.getPropertyPath());
-    }
-
-    public PropertiesReader(String propertyPath) {
-        this.properties = getProperty(propertyPath);
     }
 
     private Properties getProperty(String propertyName) {
@@ -38,7 +34,7 @@ public class PropertiesReader {
             try {
                 // input the file content to the StringBuffer "input"
                 BufferedReader file = new BufferedReader(new FileReader(this.propertyPath.getPropertyPath()));
-                StringBuffer inputBuffer = new StringBuffer();
+                StringBuilder inputBuffer = new StringBuilder();
                 String line;
                 //read file and in StringBuffer
                 while ((line = file.readLine()) != null) {

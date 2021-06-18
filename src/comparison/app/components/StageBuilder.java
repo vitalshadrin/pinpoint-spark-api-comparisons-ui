@@ -16,7 +16,7 @@ public class StageBuilder {
     int weight;
 
     public static class Builder {
-        private StageBuilder newStageBuilder;
+        private final StageBuilder newStageBuilder;
 
         public Builder() {
             newStageBuilder = new StageBuilder();
@@ -53,7 +53,7 @@ public class StageBuilder {
 
         public Stage getStage() {
             Parent root;
-            Stage newStage = null;
+            Stage newStage;
             try {
                 root = FXMLLoader.load(getClass().getResource(newStageBuilder.fxmlPath));
                 newStage = new Stage();

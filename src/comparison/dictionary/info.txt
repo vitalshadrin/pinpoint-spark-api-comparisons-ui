@@ -1,0 +1,5 @@
+Application version: 1.1.0
+
+For detailed information please contact:
+* vitali.shadrin.consultant@nielsen.com
+* nina.x.rybchak.consultant@nielsen.com
