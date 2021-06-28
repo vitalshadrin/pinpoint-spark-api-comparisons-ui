@@ -1,5 +1,6 @@
 package comparison.app.components;
 
+import comparison.app.file.FilePath;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
@@ -17,7 +18,7 @@ public class Alerts {
         alert.setTitle("Confirmation Dialog");
         alert.setHeaderText(null);
         alert.setContentText(text);
-        ((Stage) alert.getDialogPane().getScene().getWindow()).getIcons().add(new Image("/comparison/icons/ic_launcher.png"));
+        ((Stage) alert.getDialogPane().getScene().getWindow()).getIcons().add(new Image(FilePath.ICON.getFilePath()));
         alert.showAndWait();
         return alert.getResult() != null && alert.getResult().equals(continueBtn);
     }
@@ -29,7 +30,7 @@ public class Alerts {
         alert.setTitle("Information Dialog");
         alert.setHeaderText(null);
         alert.setContentText(text);
-        ((Stage) alert.getDialogPane().getScene().getWindow()).getIcons().add(new Image("/comparison/icons/ic_launcher.png"));
+        ((Stage) alert.getDialogPane().getScene().getWindow()).getIcons().add(new Image(FilePath.ICON.getFilePath()));
         alert.showAndWait();
     }
 
@@ -40,7 +41,7 @@ public class Alerts {
         alert.setTitle("Error Dialog");
         alert.setHeaderText(null);
         alert.setContentText(errorText);
-        ((Stage) alert.getDialogPane().getScene().getWindow()).getIcons().add(new Image("/comparison/icons/ic_launcher.png"));
+        ((Stage) alert.getDialogPane().getScene().getWindow()).getIcons().add(new Image(FilePath.ICON.getFilePath()));
         alert.showAndWait();
     }
 }

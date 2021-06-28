@@ -7,6 +7,7 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class StageBuilder {
     String title;
@@ -47,20 +48,16 @@ public class StageBuilder {
             return this;
         }
 
-        public StageBuilder build() {
-            return newStageBuilder;
-        }
-
         public Stage getStage() {
             Parent root;
             Stage newStage;
             try {
-                root = FXMLLoader.load(getClass().getResource(newStageBuilder.fxmlPath));
+                root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(newStageBuilder.fxmlPath)));
                 newStage = new Stage();
                 newStage.setTitle(newStageBuilder.title);
                 newStage.setResizable(false);
                 newStage.setScene(new Scene(root, newStageBuilder.weight, newStageBuilder.height));
-                newStage.getIcons().add(new Image(getClass().getResourceAsStream(newStageBuilder.iconPath)));
+                newStage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream(newStageBuilder.iconPath))));
                 newStage.show();
                 return newStage;
             } catch (IOException e) {

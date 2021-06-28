@@ -34,6 +34,7 @@ public class ControllerHelper {
     Map<TitledPane, TextField> optionsFields = new HashMap<>();
     public static Boolean optionsFieldsErrorsStatus = false;
     private static String folderPath = "";
+    public static final String VERSION = "v1.1.0";
 
     public void updateOptions() {
         this.options = new PropertiesReader(PropertyPath.OPTIONS);

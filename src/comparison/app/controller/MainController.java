@@ -2,25 +2,12 @@ package comparison.app.controller;
 
 import comparison.app.components.StageBuilder;
 import javafx.fxml.FXML;
-import javafx.scene.control.MenuItem;
 
 import static comparison.app.file.FilePath.CHANGE_LOG;
 import static comparison.app.file.FilePath.INFO;
 
 
 public class MainController extends ControllerHelper {
-
-    @FXML
-    private OptionsController optionsController;
-
-    @FXML
-    private ComparisonController comparisonController;
-
-    @FXML
-    private GenerateController generateController;
-
-    @FXML
-    private MenuItem generalSettings;
 
     @FXML
     public void general() {
@@ -51,6 +38,6 @@ public class MainController extends ControllerHelper {
 
     @FXML
     public void about() {
-        alerts.informationAlert(fileReader.readFile(INFO));
+        alerts.informationAlert(fileReader.readFile(INFO).replace("{{version}}", VERSION));
     }
 }

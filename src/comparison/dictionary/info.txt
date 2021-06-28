@@ -1,4 +1,4 @@
-Application version: 1.1.0
+Application version: {{version}}
 
 For detailed information please contact:
 * vitali.shadrin.consultant@nielsen.com
