@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.*?>
+<AnchorPane fx:id="generateAnchorId" prefHeight="572.0" prefWidth="639.0" style="-fx-background-color: #ebebeb;"
+            xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="comparison.app.controller.OptionsController">
+    <children>
+        <AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" AnchorPane.leftAnchor="0.0"
+                    AnchorPane.rightAnchor="0.0">
+            <children>
+                <GridPane fx:id="grid" alignment="CENTER" layoutX="21.0" layoutY="64.0" prefHeight="229.0"
+                          AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                          AnchorPane.topAnchor="64.0">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="1.7976931348623157E308"
+                                           minWidth="400.0" prefWidth="630.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="65.0" minWidth="65.0" prefWidth="65.0"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="270.0" prefHeight="10.0" vgrow="SOMETIMES"/>
+                        <RowConstraints maxHeight="84.0" minHeight="10.0" prefHeight="84.0" vgrow="SOMETIMES"/>
+                        <RowConstraints maxHeight="69.0" minHeight="10.0" prefHeight="68.0" vgrow="SOMETIMES"/>
+                    </rowConstraints>
+                    <children>
+                        <AnchorPane maxHeight="400.0" minHeight="400.0" minWidth="0.0" prefHeight="400.0">
+                            <children>
+                                <Pane fx:id="pane" layoutX="25.0" layoutY="14.0" prefWidth="600.0"
+                                      AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                      AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <children>
+                                        <ScrollPane fx:id="scrollPane" fitToWidth="true" minViewportHeight="100.0"
+                                                    minViewportWidth="200.0" prefViewportHeight="300.0">
+                                            <content>
+                                                <Accordion fx:id="accordion" prefHeight="381.0" prefWidth="298.0">
+                                                </Accordion>
+                                            </content>
+                                        </ScrollPane>
+                                    </children>
+                                </Pane>
+                            </children>
+                        </AnchorPane>
+                    </children>
+                </GridPane>
+            </children>
+        </AnchorPane>
+
+    </children>
+</AnchorPane>

@@ -26,6 +26,11 @@
                         <fx:include fx:id="compareTab" source="comparison.fxml" />
                     </content>
                 </Tab>
+                <Tab text="Test">
+                    <content>
+                        <fx:include fx:id="test" source="test.fxml" />
+                    </content>
+                </Tab>
             </tabs>
         </TabPane>
         <MenuBar layoutX="-8.0" layoutY="2.0" AnchorPane.leftAnchor="-8.0" AnchorPane.rightAnchor="0.0">
