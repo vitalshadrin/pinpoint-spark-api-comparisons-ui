@@ -2,7 +2,6 @@ package comparison.app.controller;
 
 import comparison.app.components.Alerts;
 import comparison.app.components.Validator;
-import comparison.app.file.FileReader;
 import comparison.app.property.PropertiesReader;
 import comparison.app.property.PropertyPath;
 import javafx.animation.KeyFrame;
@@ -28,7 +27,6 @@ import java.util.concurrent.Executors;
 public class ControllerHelper {
     Validator validator = new Validator();
     Alerts alerts = new Alerts();
-    FileReader fileReader = new FileReader();
     PropertiesReader options = new PropertiesReader(PropertyPath.OPTIONS);
     PropertiesReader general = new PropertiesReader(PropertyPath.GENERAL);
     Map<TitledPane, TextField> optionsFields = new HashMap<>();
