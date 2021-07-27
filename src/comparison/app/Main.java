@@ -8,9 +8,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
-import static comparison.app.controller.ControllerHelper.VERSION;
+import static comparison.app.controller.ControllerHelper.appText;
 import static comparison.app.controller.ControllerHelper.optionsFieldsErrorsStatus;
 
 public class Main extends Application {
@@ -18,17 +17,16 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) {
-        stage.setTitle("Comparison " + VERSION);
+        stage.setTitle("Comparison " + appText.getAppText("appVersion"));
         stage.setResizable(true);
         stage.setScene(new Scene(rootNode, 800, 526));
         stage.setMinWidth(563);
-        stage.setMaxWidth(1100);
         stage.setMinHeight(565);
         stage.setMaxHeight(565);
         stage.getIcons().add(new Image(getClass().getResourceAsStream(FilePath.ICON.getFilePath())));
         stage.show();
         if (optionsFieldsErrorsStatus)
-            new Alerts().errorAlert("Please check test options config path.");
+            new Alerts().errorAlert(appText.getAppText("pleaseCheckConfigPath"));
     }
 
     @Override

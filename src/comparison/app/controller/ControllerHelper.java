@@ -2,6 +2,7 @@ package comparison.app.controller;
 
 import comparison.app.components.Alerts;
 import comparison.app.components.Validator;
+import comparison.app.property.Dictionary;
 import comparison.app.property.PropertiesReader;
 import comparison.app.property.PropertyPath;
 import javafx.animation.KeyFrame;
@@ -29,10 +30,10 @@ public class ControllerHelper {
     Alerts alerts = new Alerts();
     PropertiesReader options = new PropertiesReader(PropertyPath.OPTIONS);
     PropertiesReader general = new PropertiesReader(PropertyPath.GENERAL);
+    public static Dictionary appText = new Dictionary();
     Map<TitledPane, TextField> optionsFields = new HashMap<>();
     public static Boolean optionsFieldsErrorsStatus = false;
     private static String folderPath = "";
-    public static final String VERSION = "v1.1.0";
 
     public void updateOptions() {
         this.options = new PropertiesReader(PropertyPath.OPTIONS);

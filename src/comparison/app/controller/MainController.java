@@ -30,27 +30,11 @@ public class MainController extends ControllerHelper {
 
     @FXML
     public void changeLog() {
-        alerts.informationAlert("Change log:\n" +
-                "\n" +
-                "v.1.1.0\n" +
-                "Resizing the application window\n" +
-                "\n" +
-                "v.1.0.2\n" +
-                "Fixed bug for scrolling by option fields\n" +
-                "\n" +
-                "v.1.0.1\n" +
-                "Fixed typo exceptions\n" +
-                "\n" +
-                "v.1.0.0\n" +
-                "The first version of the application");
+        alerts.informationAlert(appText.getAppText("changeLog"));
     }
 
     @FXML
     public void about() {
-        alerts.informationAlert("Application version: " + VERSION + "\n" +
-                "\n" +
-                "For detailed information please contact:\n" +
-                "* vitali.shadrin.consultant@nielsen.com\n" +
-                "* nina.x.rybchak.consultant@nielsen.com");
+        alerts.informationAlert(appText.getAppText("information").replace("{{version}}", appText.getAppText("appVersion")));
     }
 }

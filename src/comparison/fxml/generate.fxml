@@ -46,7 +46,7 @@
                                 <Insets left="30.0" />
                             </GridPane.margin>
                         </TextField>
-                        <Label alignment="TOP_RIGHT" contentDisplay="TOP" text="URL of testing endpoint:">
+                        <Label fx:id="urlTextLabel" alignment="TOP_RIGHT" contentDisplay="TOP">
                             <font>
                                 <Font name="Arial" size="15.0" />
                             </font>
@@ -62,7 +62,7 @@
                                 <Insets left="30.0" top="50.0" />
                             </GridPane.margin>
                         </Label>
-                        <Label text="Path to save generated API dumps:" GridPane.rowIndex="1">
+                        <Label fx:id="pathLabelTxt" GridPane.rowIndex="1">
                             <font>
                                 <Font name="Arial" size="15.0" />
                             </font>

@@ -36,11 +36,17 @@ public class GenerateController extends ControllerHelper implements Initializabl
     AnchorPane anchorPane;
 
     @FXML
+    Label urlTextLabel;
+
+    @FXML
+    Label pathLabelTxt;
+
+    @FXML
     private void generate() {
         boolean readyStatus =
-                validator.validate(url, urlLabel, "Please fill URL.") &
-                        validator.validate(endpointStorePath, labelGenerateStore, "Please fill endpoint store path.");
-        if (readyStatus && alerts.confirmationAlert("Are you sure you want to continue creating new Endpoint data?")) {
+                validator.validate(url, urlLabel, appText.getAppText("urlError")) &
+                        validator.validate(endpointStorePath, labelGenerateStore, appText.getAppText("endpointStorePathError"));
+        if (readyStatus && alerts.confirmationAlert(appText.getAppText("generateInformationAlert"))) {
             executor((System.getProperty("os.name").equals("Linux") ? "gnome-terminal -- " : "cmd /c start generate-ui.cmd ")
                     + url.getText() + " "
                     + endpointStorePath.getText());
@@ -53,6 +59,8 @@ public class GenerateController extends ControllerHelper implements Initializabl
             put(url, urlLabel);
             put(endpointStorePath, labelGenerateStore);
         }};
+        urlTextLabel.setText(appText.getAppText("urlLabelTxt"));
+        pathLabelTxt.setText(appText.getAppText("pathLabelTxt"));
         validator.validateListener(textFieldLabelHashMap);
     }
 }
